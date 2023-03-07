@@ -1,0 +1,52 @@
+.flt-body > *,
+.flt-body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+.flt-body {
+  width: 100vw;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flt-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid red;
+}
+.flt-slide-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.flt-top-menu {
+  border: 4px solid green;
+  width: 80vw;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.flt-slide {
+  border: 4px solid blue;
+  width: 80vw;
+  min-height: 50vh;
+}
+.flt-slides-nav {
+  width: 80vw;
+  border: 4px solid yellow;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: xx-large;
+}
+ol.flt-table {
+  display: flex;
+  width: 90%;
+  align-items: flex-start;
+  flex-direction: column;
+}
