@@ -1,14 +1,17 @@
+////SLIDER
 //Buttons
 const revertButton = document.getElementById("flt-revert");
 const leftButton = document.getElementById("flt-left");
 const rightButton = document.getElementById("flt-right");
 const tableButton = document.getElementById("flt-table-button");
 const menuElements = document.querySelectorAll(".flt-side-elem");
+
 //Elements
 const slide = document.getElementById("flt-slide");
 const sectionTitle = document.getElementById("flt-section-title");
 const table = document.getElementById("flt-table");
 const tableElements = document.querySelectorAll(".flt-table-elem");
+
 //Arrays
 const slides = [
   //1
@@ -35,13 +38,17 @@ const sections = [
   "Nowinki techniczne",
 ];
 const sectionNums = [0, 3, 6, 9];
+
 //Indicators
 var currentSlide = 0;
 var currentSection = 1;
+
 //Functions
 function changeSlide(num) {
   slide.innerHTML = slides[num];
   currentSlide = num;
+  slideIndicator = currentSlide + 1;
+  console.log("FLTSlide: " + slideIndicator);
   checkArrows();
   checkSections();
 }
@@ -62,15 +69,20 @@ function checkArrows() {
 function checkSections() {
   for (var i = 0; i < 4; i++) {
     var a = i + 1;
-    if (currentSlide >= sectionNums[i] && currentSlide < sectionNums[a]) {
+    if (
+      (currentSlide >= sectionNums[i] && currentSlide < sectionNums[a]) ||
+      currentSlide >= 9
+    ) {
       document
         .getElementById("flt-menu-" + currentSection)
         .classList.remove("flt-menu-active");
       document.getElementById("flt-menu-" + a).classList.add("flt-menu-active");
       currentSection = a;
+      console.log("FLTSection: " + currentSection);
     }
   }
 }
+
 //Listeners
 menuElements.forEach(function (elem, index) {
   elem.addEventListener("click", function () {
@@ -94,3 +106,5 @@ rightButton.addEventListener("click", function () {
 tableButton.addEventListener("click", function () {
   table.classList.toggle("flt-flex");
 });
+
+////CONTENT
