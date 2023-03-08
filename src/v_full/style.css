@@ -49,10 +49,14 @@ ol.flt-table {
   width: 90%;
   align-items: flex-start;
   flex-direction: column;
+  display: none;
 }
 .flt-menu-active {
   color: red;
 }
 .flt-none {
   visibility: hidden;
+}
+.flt-flex {
+  display: flex !important;
 }

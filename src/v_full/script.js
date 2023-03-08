@@ -2,6 +2,7 @@ const revertButton = document.getElementById("flt-revert");
 const leftButton = document.getElementById("flt-left");
 const rightButton = document.getElementById("flt-right");
 const tableButton = document.getElementById("flt-table-button");
+const table = document.getElementById("flt-table");
 /////////
 const menu1 = document.getElementById("flt-menu-1");
 const menu2 = document.getElementById("flt-menu-2");
@@ -35,6 +36,8 @@ const sections = [
   "Domieszkowanie lokalne",
   "Nowinki techniczne",
 ];
+const tableElements = document.querySelectorAll(".flt-table-elem");
+console.log(tableElements);
 const sectionNums = [0, 3, 6, 9];
 ////////
 var currentSlide = 0;
@@ -49,6 +52,43 @@ function changeSlide(num) {
   }
   console.log("S " + currentSection);
   console.log("Sl " + currentSlide);
+}
+function changeSlide2(num) {
+  slide.innerHTML = slides[num];
+  currentSlide = num;
+  if (currentSlide > 0) {
+    revertButton.classList.remove("flt-none");
+  } else {
+    revertButton.classList.add("flt-none");
+  }
+  if (num >= sectionNums[0] && num < sectionNums[1]) {
+    document
+      .getElementById("flt-menu-" + currentSection)
+      .classList.remove("flt-menu-active");
+    document.getElementById("flt-menu-" + 1).classList.add("flt-menu-active");
+    currentSection = 1;
+  }
+  if (num >= sectionNums[1] && num < sectionNums[2]) {
+    document
+      .getElementById("flt-menu-" + currentSection)
+      .classList.remove("flt-menu-active");
+    document.getElementById("flt-menu-" + 2).classList.add("flt-menu-active");
+    currentSection = 2;
+  }
+  if (num >= sectionNums[2] && num < sectionNums[3]) {
+    document
+      .getElementById("flt-menu-" + currentSection)
+      .classList.remove("flt-menu-active");
+    document.getElementById("flt-menu-" + 3).classList.add("flt-menu-active");
+    currentSection = 3;
+  }
+  if (num >= sectionNums[3] && num < sectionNums[4]) {
+    document
+      .getElementById("flt-menu-" + currentSection)
+      .classList.remove("flt-menu-active");
+    document.getElementById("flt-menu-" + 4).classList.add("flt-menu-active");
+    currentSection = 4;
+  }
 }
 function toggleSection(num) {
   document
@@ -127,4 +167,23 @@ leftButton.addEventListener("click", function () {
   console.log(currentSlide);
   console.log(sectionNums[currentSection - 1]);
   console.log(currentSection);
+});
+tableButton.addEventListener("click", function () {
+  table.classList.toggle("flt-flex");
+});
+tableElements.forEach(function (elem, index) {
+  elem.addEventListener("click", function () {
+    changeSlide2(index);
+    if (currentSlide > 0) {
+      leftButton.classList.remove("flt-none");
+    } else {
+      leftButton.classList.add("flt-none");
+    }
+    if (currentSlide == slides.length) {
+      rightButton.classList.add("flt-none");
+    }
+    if (currentSlide < slides.length) {
+      rightButton.classList.remove("flt-none");
+    }
+  });
 });
