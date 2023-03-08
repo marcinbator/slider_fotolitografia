@@ -50,3 +50,9 @@ ol.flt-table {
   align-items: flex-start;
   flex-direction: column;
 }
+.flt-menu-active {
+  color: red;
+}
+.flt-none {
+  visibility: hidden;
+}
