@@ -18,47 +18,63 @@
     <script async defer src="script.js"></script>
     <title>Fotolitografia - prezentacja</title>
   </head>
-  <body class="flt-body">
+  <body class="flt-body" onload="fltSettings()">
     <header class="flt-header"></header>
     <section class="flt-container">
-      <h3 id="flt-section-title" class="flt-section-title">Fotolitografia</h3>
+      <h1 class="flt-title">
+        <span id="flt-title"></span>
+        <span class="flt-subtitle"
+          >projekt i wykonanie szablonu:
+          <a target="'blank" href="https://github.com/heilmartinos"
+            >Marcin Bator</a
+          ></span
+        >
+      </h1>
       <div class="flt-slide-container">
         <aside class="flt-top-menu">
-          <span id="flt-menu-1" class="flt-menu-active flt-side-elem">
+          <i
+            id="flt-top-menu-arrow"
+            class="flt-button flt-top-menu-arrow fa-solid fa-chevron-down"
+          ></i>
+          <span
+            id="flt-menu-1"
+            class="flt-menu-active flt-button flt-side-elem"
+          >
             Fotolitografia
           </span>
-          <span id="flt-menu-2" class="flt-side-elem">
+          <span id="flt-menu-2" class="flt-side-elem flt-button">
             Technologie planarne
           </span>
-          <span id="flt-menu-3" class="flt-side-elem">
+          <span id="flt-menu-3" class="flt-side-elem flt-button">
             Domieszkowanie lokalne
           </span>
-          <span id="flt-menu-4" class="flt-side-elem">
+          <span id="flt-menu-4" class="flt-side-elem flt-button">
             Nowinki techniczne
           </span>
         </aside>
         <div id="flt-slide" class="flt-slide"><h2>Slajd 1</h2></div>
       </div>
       <nav class="flt-slides-nav">
-        <i
-          id="flt-revert"
-          class="flt-none flt-button fa-solid fa-angles-left"
-        ></i>
-        <i
-          id="flt-left"
-          class="flt-none flt-button fa-solid fa-chevron-left"
-        ></i>
-        <i id="flt-right" class="flt-button fa-solid fa-chevron-right"></i>
-        <i id="flt-table-button" class="flt-button fa-solid fa-bars"></i>
+        <i id="flt-revert" class="flt-none flt-button fa-solid fa-angles-left">
+          <span class="flt-tip">Od nowa</span>
+        </i>
+        <i id="flt-left" class="flt-none flt-button fa-solid fa-chevron-left">
+          <span class="flt-tip">Poprzedni</span>
+        </i>
+        <i id="flt-right" class="flt-button fa-solid fa-chevron-right"
+          ><span class="flt-tip">Następny</span></i
+        >
+        <i id="flt-table-button" class="flt-button fa-solid fa-bars"
+          ><span class="flt-tip">Pokaż/ukryj spis treści</span></i
+        >
       </nav>
     </section>
     <ol id="flt-table" class="flt-table">
       <h4 class="flt-table-title">Spis treści</h4>
-      <li class="flt-table-elem">element1</li>
-      <li class="flt-table-elem">element1</li>
-      <li class="flt-table-elem">element1</li>
-      <li class="flt-table-elem">element1</li>
+      <li class="flt-button flt-table-elem">element1</li>
+      <li class="flt-button flt-table-elem">element1</li>
+      <li class="flt-button flt-table-elem">element1</li>
+      <li class="flt-button flt-table-elem">element1</li>
     </ol>
-    <footer class="flt-footer"></footer>
   </body>
 </html>

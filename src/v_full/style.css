@@ -1,3 +1,4 @@
+/*Slider styles*/
 .flt-body > *,
 .flt-body {
   box-sizing: border-box;
@@ -8,16 +9,38 @@
 .flt-body {
   width: 100vw;
   min-height: 90vh;
+  overflow-x: hidden;
+}
+.flt-body a {
+  text-decoration: none;
+  color: rgb(136, 136, 136);
 }
 .flt-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 5px solid red;
-  max-width: 98vw;
-  max-height: 98vh;
   margin: auto;
+}
+.flt-title {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(242, 242, 242, 1) 50%,
+    rgba(235, 235, 235, 1) 100%
+  );
+  width: 100vw;
+  text-align: center;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(38, 111, 219);
+  font-size: xx-large;
+  text-shadow: 0px 0px 1px rgb(255, 255, 255);
+  flex-direction: column;
+  padding: 10px;
 }
 .flt-slide-container {
   display: flex;
@@ -25,21 +48,24 @@
   justify-content: center;
   flex-direction: column;
 }
+.flt-subtitle {
+  font-size: small;
+  color: black;
+}
 .flt-top-menu {
-  border: 4px solid green;
   width: 80vw;
   display: flex;
   justify-content: space-evenly;
   text-align: center;
 }
 .flt-slide {
-  border: 4px solid blue;
-  width: 80vw;
-  min-height: 50vh;
+  height: 70vh;
+  width: 98vw;
+  border: 1px solid black;
+  margin: 10px;
 }
 .flt-slides-nav {
-  width: 80vw;
-  border: 4px solid yellow;
+  width: 98vw;
   display: flex;
   justify-content: space-evenly;
   font-size: xx-large;
@@ -50,11 +76,19 @@ ol.flt-table {
   align-items: flex-start;
   flex-direction: column;
   display: none;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 10px;
+  overflow-y: auto;
+  margin-bottom: 50px;
+}
+.flt-table-elem {
+  margin: 0 30px;
 }
 .flt-menu-active {
-  color: red;
+  color: rgb(38, 111, 219);
 }
 .flt-none {
   visibility: hidden;
@@ -62,3 +96,62 @@ ol.flt-table {
 .flt-flex {
   display: flex !important;
 }
+.flt-top-menu-arrow {
+  display: none !important;
+}
+.flt-button::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flt-button ::selection {
+  color: none;
+  background: none;
+}
+.flt-button:hover {
+  cursor: pointer;
+  color: rgb(38, 111, 219);
+}
+.flt-tip {
+  position: relative;
+  bottom: 80px;
+  font-size: small;
+  background: rgb(255, 255, 255);
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  visibility: hidden;
+  font-family: "Roboto", sans-serif;
+}
+.flt-button:hover .flt-tip {
+  visibility: visible;
+}
+@media (max-width: 750px) {
+  .flt-top-menu-arrow {
+    display: block !important;
+  }
+  .flt-top-menu {
+    flex-direction: column;
+  }
+  .flt-side-elem {
+    display: none;
+  }
+  .flt-slide {
+    min-height: 10vh;
+  }
+  .flt-body i,
+  .flt-body h3,
+  .flt-body h2 {
+    font-size: small !important;
+  }
+  .flt-button {
+    font-size: small;
+  }
+  .flt-button:hover .flt-tip {
+    visibility: hidden;
+  }
+}
+
+/*Page styles*/
+
+/*Content styles*/

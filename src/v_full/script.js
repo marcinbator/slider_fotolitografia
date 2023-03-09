@@ -1,16 +1,6 @@
-////SLIDER
-//Buttons
-const revertButton = document.getElementById("flt-revert");
-const leftButton = document.getElementById("flt-left");
-const rightButton = document.getElementById("flt-right");
-const tableButton = document.getElementById("flt-table-button");
-const menuElements = document.querySelectorAll(".flt-side-elem");
-
-//Elements
-const slide = document.getElementById("flt-slide");
-const sectionTitle = document.getElementById("flt-section-title");
-const table = document.getElementById("flt-table");
-const tableElements = document.querySelectorAll(".flt-table-elem");
+////SETTINGS
+//Info
+const title = "Fotolitografia i technologie planarne";
 
 //Arrays
 const slides = [
@@ -39,20 +29,37 @@ const sections = [
 ];
 const sectionNums = [0, 3, 6, 9];
 
+////SLIDER
+//Buttons
+const revertButton = document.getElementById("flt-revert");
+const leftButton = document.getElementById("flt-left");
+const rightButton = document.getElementById("flt-right");
+const tableButton = document.getElementById("flt-table-button");
+const mobileMenuButton = document.getElementById("flt-top-menu-arrow");
+
+//Elements
+const slide = document.getElementById("flt-slide");
+const table = document.getElementById("flt-table");
+const tableElements = document.querySelectorAll(".flt-table-elem");
+const menuElements = document.querySelectorAll(".flt-side-elem");
+
 //Indicators
 var currentSlide = 0;
 var currentSection = 1;
 
 //Functions
-function changeSlide(num) {
+function fltSettings() {
+  document.getElementById("flt-title").textContent = title;
+}
+function fltChangeSlide(num) {
   slide.innerHTML = slides[num];
   currentSlide = num;
   slideIndicator = currentSlide + 1;
   console.log("FLTSlide: " + slideIndicator);
-  checkArrows();
-  checkSections();
+  fltCheckArrows();
+  fltCheckSections();
 }
-function checkArrows() {
+function fltCheckArrows() {
   if (currentSlide > 0) {
     leftButton.classList.remove("flt-none");
     revertButton.classList.remove("flt-none");
@@ -66,7 +73,7 @@ function checkArrows() {
     rightButton.classList.remove("flt-none");
   }
 }
-function checkSections() {
+function fltCheckSections() {
   for (var i = 0; i < 4; i++) {
     var a = i + 1;
     if (
@@ -86,25 +93,30 @@ function checkSections() {
 //Listeners
 menuElements.forEach(function (elem, index) {
   elem.addEventListener("click", function () {
-    changeSlide(sectionNums[index]);
+    fltChangeSlide(sectionNums[index]);
   });
 });
 tableElements.forEach(function (elem, index) {
   elem.addEventListener("click", function () {
-    changeSlide(index);
+    fltChangeSlide(index);
   });
 });
 revertButton.addEventListener("click", function () {
-  changeSlide(0);
+  fltChangeSlide(0);
 });
 leftButton.addEventListener("click", function () {
-  changeSlide(currentSlide - 1);
+  fltChangeSlide(currentSlide - 1);
 });
 rightButton.addEventListener("click", function () {
-  changeSlide(currentSlide + 1);
+  fltChangeSlide(currentSlide + 1);
 });
 tableButton.addEventListener("click", function () {
   table.classList.toggle("flt-flex");
+});
+mobileMenuButton.addEventListener("click", function () {
+  menuElements.forEach(function (elem) {
+    elem.classList.toggle("flt-flex");
+  });
 });
 
 ////CONTENT
