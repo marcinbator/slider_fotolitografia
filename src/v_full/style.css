@@ -47,8 +47,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 98vh;
-  max-width: 98vw;
 }
 .flt-slide-container:fullscreen {
   color: white;
@@ -64,10 +62,17 @@
   text-align: center;
 }
 .flt-slide {
-  height: 80vh;
-  width: 98vw;
+  height: 70vh;
+  width: 70vw;
   border: 1px solid black;
   margin: 10px;
+  padding: 20px;
+}
+.flt-slide-container:fullscreen .flt-slide {
+  height: 80vh;
+  width: 98vw;
+  background: white;
+  color: black;
 }
 .flt-slides-nav {
   width: 98vw;
@@ -131,7 +136,7 @@ ol.flt-table {
 .flt-button:hover .flt-tip {
   visibility: visible;
 }
-@media (max-width: 750px) {
+@media (max-width: 1000px) {
   .flt-top-menu-arrow {
     display: block !important;
   }
@@ -142,7 +147,11 @@ ol.flt-table {
     display: none;
   }
   .flt-slide {
-    min-height: 10vh;
+    height: 30vh;
+    width: 95vw;
+  }
+  .flt-title {
+    font-size: large;
   }
   .flt-body i,
   .flt-body h3,
