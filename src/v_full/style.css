@@ -30,7 +30,7 @@
     rgba(242, 242, 242, 1) 50%,
     rgba(235, 235, 235, 1) 100%
   );
-  width: 100vw;
+  width: 100%;
   text-align: center;
   height: 10vh;
   display: flex;
@@ -47,6 +47,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  height: 98vh;
+  max-width: 98vw;
+}
+.flt-slide-container:fullscreen {
+  color: white;
 }
 .flt-subtitle {
   font-size: small;
@@ -59,7 +64,7 @@
   text-align: center;
 }
 .flt-slide {
-  height: 70vh;
+  height: 80vh;
   width: 98vw;
   border: 1px solid black;
   margin: 10px;

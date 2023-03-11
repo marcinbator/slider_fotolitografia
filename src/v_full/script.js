@@ -36,12 +36,14 @@ const leftButton = document.getElementById("flt-left");
 const rightButton = document.getElementById("flt-right");
 const tableButton = document.getElementById("flt-table-button");
 const mobileMenuButton = document.getElementById("flt-top-menu-arrow");
+const fullScreen = document.getElementById("flt-full");
 
 //Elements
 const slide = document.getElementById("flt-slide");
 const table = document.getElementById("flt-table");
 const tableElements = document.querySelectorAll(".flt-table-elem");
 const menuElements = document.querySelectorAll(".flt-side-elem");
+const slidesContainer = document.querySelector(".flt-slide-container");
 
 //Indicators
 var currentSlide = 0;
@@ -89,6 +91,22 @@ function fltCheckSections() {
     }
   }
 }
+function toggleFullScreen() {
+  if (slidesContainer.requestFullscreen) {
+    slidesContainer.requestFullscreen();
+  } else if (slidesContainer.webkitRequestFullscreen) {
+    slidesContainer.webkitRequestFullscreen();
+  } else if (slidesContainer.msRequestFullscreen) {
+    slidesContainer.msRequestFullscreen();
+  }
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) {
+    document.msExitFullscreen();
+  }
+}
 
 //Listeners
 menuElements.forEach(function (elem, index) {
@@ -118,5 +136,6 @@ mobileMenuButton.addEventListener("click", function () {
     elem.classList.toggle("flt-flex");
   });
 });
+fullScreen.addEventListener("click", toggleFullScreen);
 
 ////CONTENT
