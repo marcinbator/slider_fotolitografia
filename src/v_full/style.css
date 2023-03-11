@@ -41,6 +41,7 @@
   text-shadow: 0px 0px 1px rgb(255, 255, 255);
   flex-direction: column;
   padding: 10px;
+  margin-top: 10px;
 }
 .flt-slide-container {
   display: flex;
@@ -67,10 +68,13 @@
   border: 1px solid black;
   margin: 10px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 }
 .flt-slide-container:fullscreen .flt-slide {
   height: 80vh;
-  width: 98vw;
+  width: 90vw;
   background: white;
   color: black;
 }
@@ -105,6 +109,9 @@ ol.flt-table {
 }
 .flt-flex {
   display: flex !important;
+}
+.flt-block {
+  display: block !important;
 }
 .flt-top-menu-arrow {
   display: none !important;
@@ -166,6 +173,43 @@ ol.flt-table {
   }
 }
 
-/*Page styles*/
-
 /*Content styles*/
+.flt-def-window {
+  display: none;
+  position: relative;
+  left: 10px;
+  border: 1px solid lightgrey;
+  padding: 10px;
+  margin: 10px 0;
+  color: grey;
+}
+.flt-def {
+  color: rgb(38, 111, 219);
+}
+.flt-def:hover {
+  cursor: pointer;
+}
+.flt-image {
+  max-width: 50%;
+  margin: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.flt-text {
+  display: block;
+  text-align: left;
+  font-size: x-large;
+  margin: 30px 50px;
+}
+.flt-slide h3 {
+  font-size: x-large;
+}
+.flt-slide h2 {
+  font-size: xx-large;
+}
+@media (max-width: 1000px) {
+  .flt-text {
+    font-size: large;
+    text-align: left;
+  }
+}

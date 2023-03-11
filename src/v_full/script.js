@@ -5,8 +5,47 @@ const title = "Fotolitografia i technologie planarne";
 //Arrays
 const slides = [
   //1
-  "<h2>Slajd 1</h2>",
-  "<h2>Slajd 2</h2>",
+  `<h2>Podstawowe fazy fotolitografii</h2>
+    <h3>Etap I</h3>
+    <div class="flt-text">
+      <span class="flt-def"
+        >Fotolitografia
+        <div class="flt-def-window">
+          Polega na wielokrotnym nakładaniu na powstającą strukturę
+          krzemową światłoczułych masek, które po naświetleniu i
+          potraktowaniu odpowiednim roztworem odsłaniają jedynie wybrane
+          powierzchnie krzemu dla kolejnych procesów. Naświetlanie
+          przypomina w pewnym stopniu wyświetlanie slajdów na ekranie,
+          rolę slajdu pełni maska wzorcowa - podstawowa różnica polega na
+          tym, że naświetlany obraz jest pomniejszoną, a nie powiększoną
+          wersją oryginału.
+        </div></span
+      >
+      polega na zastosowaniu emulsji światłoczułej (tzw.
+      <strong>fotorezystu</strong>) do maskowania i lokalnego wytrawiania
+      odsłoniętych warstw SiO<sub>2</sub>, Si<sub>3</sub>N<sub>4</sub>,
+      Al, krzemu polikrystalicznego itp. Proces fotolitografii pokazany
+      jest tu na przykładzie ważniejszych faz procesu wytwarzania
+      <span class="flt-def"
+        >okien
+        <div class="flt-def-window">
+          Wytrawiona przestrzeń w warstwie SiO<sub>2</sub>,
+          Si<sub>3</sub>N<sub>4</sub>, Al, krzemu polikrystalicznego itp.
+          odsłaniająca wybrane obszary płytki podłożowej.
+        </div></span
+      >
+      w warstwie SiO<sub>2</sub>.
+    </div>
+    <img class="flt-image" src="images/flt-1.png" alt="" />`,
+  `<h3>Etap II - Nakładanie emulsji światłoczułej na podłoże Si</h3>
+    <img class="flt-image" src="images/flt-1.png" alt="" />
+    <div class="flt-text">
+      Proces nakładania cienkiej warstwy
+      <strong>emulsji światłoczułej</strong> na powierzchnię utlenionej
+      płytki podłożowej. Bardzo ważne jest uzyskanie równomiernej warstwy
+      emulsji, dlatego płytka jest mocowana przyssawką próżniową do
+      stolika wykonującego szybki ruch obrotowy (ok. 20 000 obr/min).
+    </div>`,
   "<h2>Slajd 3</h2>",
   //2
   "<h2>Slajd 4</h2>",
@@ -37,6 +76,7 @@ const rightButton = document.getElementById("flt-right");
 const tableButton = document.getElementById("flt-table-button");
 const mobileMenuButton = document.getElementById("flt-top-menu-arrow");
 const fullScreen = document.getElementById("flt-full");
+const defButtons = document.querySelectorAll(".flt-def");
 
 //Elements
 const slide = document.getElementById("flt-slide");
@@ -44,6 +84,7 @@ const table = document.getElementById("flt-table");
 const tableElements = document.querySelectorAll(".flt-table-elem");
 const menuElements = document.querySelectorAll(".flt-side-elem");
 const slidesContainer = document.querySelector(".flt-slide-container");
+const defElems = document.querySelectorAll("flt-def-window");
 
 //Indicators
 var currentSlide = 0;
@@ -91,7 +132,7 @@ function fltCheckSections() {
     }
   }
 }
-function toggleFullScreen() {
+function fltToggleFullScreen() {
   if (slidesContainer.requestFullscreen) {
     slidesContainer.requestFullscreen();
   } else if (slidesContainer.webkitRequestFullscreen) {
@@ -119,6 +160,11 @@ tableElements.forEach(function (elem, index) {
     fltChangeSlide(index);
   });
 });
+defButtons.forEach(function (elem) {
+  elem.addEventListener("click", function () {
+    elem.querySelector(".flt-def-window").classList.toggle("flt-block");
+  });
+});
 revertButton.addEventListener("click", function () {
   fltChangeSlide(0);
 });
@@ -136,6 +182,6 @@ mobileMenuButton.addEventListener("click", function () {
     elem.classList.toggle("flt-flex");
   });
 });
-fullScreen.addEventListener("click", toggleFullScreen);
+fullScreen.addEventListener("click", fltToggleFullScreen);
 
 ////CONTENT
