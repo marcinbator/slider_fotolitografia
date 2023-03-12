@@ -10,6 +10,7 @@
   width: 100vw;
   min-height: 90vh;
   overflow-x: hidden;
+  scroll-behavior: smooth !important;
 }
 .flt-body a {
   text-decoration: none;
@@ -143,6 +144,9 @@ ol.flt-table {
 .flt-button:hover .flt-tip {
   visibility: visible;
 }
+.flt-button {
+  font-size: xx-large;
+}
 @media (max-width: 1000px) {
   .flt-top-menu-arrow {
     display: block !important;
@@ -154,8 +158,8 @@ ol.flt-table {
     display: none;
   }
   .flt-slide {
-    height: 30vh;
-    width: 95vw;
+    height: 60vh;
+    width: 90vw;
   }
   .flt-title {
     font-size: large;
@@ -190,8 +194,7 @@ ol.flt-table {
   cursor: pointer;
 }
 .flt-image {
-  max-width: 50%;
-  margin: 40px;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -206,6 +209,34 @@ ol.flt-table {
 }
 .flt-slide h2 {
   font-size: xx-large;
+}
+.flt-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 20%;
+  margin-top: 80px;
+}
+span.flt-button {
+  font-size: medium !important;
+}
+ol .flt-button {
+  font-size: medium !important;
+}
+.flt-play {
+  margin-top: 20px;
+}
+.flt-anim-up {
+  position: relative;
+  bottom: 50px;
+  transition: bottom 1s ease-in-out;
+}
+.flt-desc {
+  position: relative;
+  bottom: 30px;
+  display: none;
+  font-size: x-large;
 }
 @media (max-width: 1000px) {
   .flt-text {

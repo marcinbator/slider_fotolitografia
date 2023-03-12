@@ -52,18 +52,7 @@
             Nowinki techniczne
           </span>
         </aside>
-        <div id="flt-slide" class="flt-slide">
-          <h2>Podstawowe fazy fotolitografii</h2>
-          <h3>Etap II - Nakładanie emulsji światłoczułej na podłoże Si</h3>
-          <img class="flt-image" src="images/flt-1.png" alt="" />
-          <div class="flt-text">
-            Proces nakładania cienkiej warstwy
-            <strong>emulsji światłoczułej</strong> na powierzchnię utlenionej
-            płytki podłożowej. Bardzo ważne jest uzyskanie równomiernej warstwy
-            emulsji, dlatego płytka jest mocowana przyssawką próżniową do
-            stolika wykonującego szybki ruch obrotowy (ok. 20 000 obr/min).
-          </div>
-        </div>
+        <div id="flt-slide" class="flt-slide"></div>
         <nav class="flt-slides-nav">
           <i
             id="flt-revert"
@@ -87,8 +76,10 @@
       </div>
     </section>
     <nav class="flt-slides-nav">
-      <i id="flt-table-button" class="flt-button fa-solid fa-bars"
-        ><span class="flt-tip">Pokaż/ukryj spis treści</span></i
+      <a href="#bottom">
+        <i id="flt-table-button" class="flt-button fa-solid fa-bars"
+          ><span class="flt-tip">Pokaż/ukryj spis treści</span></i
+        ></a
       >
     </nav>
     <ol id="flt-table" class="flt-table">
@@ -98,7 +89,7 @@
         Nakładanie emulsji światłoczułej na podłoże Si
       </li>
       <li class="flt-button flt-table-elem">Naświetlanie przez fotomaskę</li>
-      <li class="flt-button flt-table-elem">
+      <li id="bottom" class="flt-button flt-table-elem">
         Odsłonięcie warstwy SiO<sub>2</sub>
       </li>
     </ol>
