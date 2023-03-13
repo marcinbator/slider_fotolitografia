@@ -37,16 +37,43 @@ const slides = [
       w warstwie SiO<sub>2</sub>.
     </div>
     <img class="flt-image" src="images/flt-1.png" alt="" />`,
-  `<h2>Podstawowe fazy fotolitografii</h2>
-          <h3>Etap II - Nakładanie emulsji światłoczułej na podłoże Si</h3>
-          <div class="flt-animation">
-            <div
-              class="flt-anim-up"
-              style="background-color: black; width: 50%; height: 10px"
-            >
-              <span class="flt-desc">&#8595 Warstwa światłoczuła (fotorezyst)</span>
+  `
+    <h3>Etap II - Nakładanie emulsji światłoczułej na podłoże Si</h3>
+    <div class="flt-animation">
+      <div
+        class="flt-anim-up"
+        style="background-color: black; width: 50%; height: 10px"
+      >
+        <span class="flt-desc">&#8595 Warstwa światłoczuła (fotorezyst)</span>
+      </div>
+      <img class="flt-image" src="images/flt-1.png" alt="" />
+      <i
+        id="flt-play-1"
+        class="flt-play flt-button fa-regular fa-circle-play"
+        ><span class="flt-tip">Odtwórz</span></i
+      >
+    </div>
+    <div class="flt-text">
+      Proces nakładania cienkiej warstwy
+      <strong>emulsji światłoczułej</strong> na powierzchnię utlenionej
+      płytki podłożowej. Bardzo ważne jest uzyskanie równomiernej warstwy
+      emulsji, dlatego płytka jest mocowana przyssawką próżniową do
+      stolika wykonującego szybki ruch obrotowy (ok. 20 000 obr/min).
+    </div>`,
+  `<h3>Etap III - Naświetlanie przez fotomaskę</h3>
+          <div style="min-height: 40%;" class="flt-animation">
+            <div class="flt-anim-up">
+              <img class="flt-image" src="images/flt-4.png" alt="" />
+              <span style="bottom: 60px" class="flt-desc"
+                >Promieniowanie nadfioletowe</span
+              >
             </div>
-            <img class="flt-image" src="images/flt-1.png" alt="" />
+            <span
+              style="display: block; bottom: 0px; left: 15%; font-size: small"
+              class="flt-desc"
+              >Maska fotolitograficzna &#8595</span
+            >
+            <img class="flt-image" src="images/flt-3.png" alt="" />
             <i
               id="flt-play-1"
               class="flt-play flt-button fa-regular fa-circle-play"
@@ -54,13 +81,66 @@ const slides = [
             >
           </div>
           <div class="flt-text">
-            Proces nakładania cienkiej warstwy
-            <strong>emulsji światłoczułej</strong> na powierzchnię utlenionej
-            płytki podłożowej. Bardzo ważne jest uzyskanie równomiernej warstwy
-            emulsji, dlatego płytka jest mocowana przyssawką próżniową do
-            stolika wykonującego szybki ruch obrotowy (ok. 20 000 obr/min).
+            Po wysuszeniu emulsji powierzchnia płytki jest
+            <strong>naświetlana</strong> przez specjalną maskę kontaktową (tzw.
+            <span class="flt-def"
+              >fotomaskę
+              <div class="flt-def-window">
+                To szklany negatyw zawierający obraz fotograficzny
+                poszczególnych warstw (obszarów domieszkowanych, metalizacji,
+                itp). Do zrealizowania pełnego cyklu wytwarzania układu
+                scalonego jest konieczny komplet fotomasek.
+                <img
+                  class="flt-image"
+                  src="images/flt-2.png"
+                  alt=""
+                /></div></span
+            >)
+            <span class="flt-def"
+              >promieniowaniem nadfioletowym
+              <div class="flt-def-window">
+                Jest to promieniowanie elektromagnetyczne o fali długości 10-400
+                nm, nie wywołujące wrażeń wzrokowych u człowieka; obszar
+                promieniowania nadfioletowego dzieli się umownie na 4 części:
+                zakres A o długości fali 315-400 nm, zakres B 280-315 nm, zakres
+                C 200-280 nm i nadfiolet próżniowy 10-200 nm, lub też dzieli się
+                na nadfiolet bliski (200-400 nm) i nadfiolet daleki, próżniowy
+                (10-200 nm), który swoją nazwę zawdzięcza temu, że można go
+                badać tylko w próżni, gdyż fale o odpowiadających mu długościach
+                są bardzo silnie pochłaniane przez powietrze. Do detekcji
+                promieniowania nadfioletowego wykorzystuje się: fotoogniwa,
+                fotopowielacze, przetworniki promieniowania.
+                <br />
+                <br />
+                Najsilniejszym naturalnym źródłem promieniowania nadfioletowego
+                jest Słońce, zaś najbardziej rozpowszechnionymi sztucznymi
+                źródłami promieniowania nadfioletowego są lampy wyładowcze
+                (głównie rtęciowe). Dzięki swoim właściwościom promieniowanie
+                nadfioletowe jest wykorzystywane m.in. w technice oświetleniowej
+                (świetlówki), analizie luminescencyjnej, badaniach
+                nieniszczących, do sterylizacji pomieszczeń, w biologii w
+                badaniach mikroskopowych tkanek i komórek, w kryminalistyce,
+                muzealnictwie, w przemyśle do przyspieszania procesów
+                polimeryzacji tworzyw sztucznych. Promieniowanie nadfioletowe
+                odkryli 1801 J. Ritter i W.H. Wollaston.
+              </div></span
+            >. Operacje te są wykonywane w
+            <strong>ochronnym świetle żółtym</strong>. Naświetlanie ma na celu
+            spowodowanie odpowiednych procesów fotochemicznych w warstwie
+            światłoczułej, tj.
+            <span class="flt-def"
+              >polimeryzację
+              <div class="flt-def-window">
+                Jest to reakcja, w wyniku której związki chemiczne o małej masie
+                cząsteczkowej zwane monomerami lub mieszanina kilku takich
+                związków reagują same ze sobą, aż do wyczerpania wolnych grup
+                funkcyjnych, w wyniku czego powstają cząsteczki o wielokrotnie
+                większej masie cząsteczkowej od substratów, tworząc polimer.
+              </div></span
+            >
+            powodującą uodpornienie warstwy na działanie roztworu
+            wytrawiającego.
           </div>`,
-  "<h2>Slajd 3</h2>",
   "<h2>Slajd 4</h2>",
   "<h2>Slajd 5</h2>",
   "<h2>Slajd 6</h2>",
