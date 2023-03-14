@@ -5,8 +5,19 @@ const title = "Fotolitografia i technologie planarne";
 //Arrays
 const slides = [
   //1
+  `<div class="flt-title-slide">
+            <h2>Fotolitografia i technologie planarne</h2>
+            <h4>
+              Wykonał Marcin Bator
+              <h5>na podstawie prezentacji Waldemara Obirka</h5>
+            </h4>
+          </div>`,
+  `<div class="flt-title-slide flt-section">
+            <h2>Fotolitografia</h2>
+          </div>`,
   `<h2>Podstawowe fazy fotolitografii</h2>
     <h3>Etap I</h3>
+    <img class="flt-image" src="images/flt-1.png" alt="" />
     <div class="flt-text">
       <span class="flt-def"
         >Fotolitografia
@@ -36,7 +47,7 @@ const slides = [
       >
       w warstwie SiO<sub>2</sub>.
     </div>
-    <img class="flt-image" src="images/flt-1.png" alt="" />`,
+    `,
   `
     <h3>Etap II - Nakładanie emulsji światłoczułej na podłoże Si</h3>
     <div class="flt-animation">
@@ -44,7 +55,7 @@ const slides = [
         class="flt-anim-up"
         style="background-color: black; width: 50%; height: 10px"
       >
-        <span class="flt-desc">&#8595 Warstwa światłoczuła (fotorezyst)</span>
+        <span class="flt-desc"><i class="fa-solid fa-arrow-down"></i> Warstwa światłoczuła (fotorezyst)</span>
       </div>
       <img class="flt-image" src="images/flt-1.png" alt="" />
       <i
@@ -64,18 +75,18 @@ const slides = [
           <div style="min-height: 40%;" class="flt-animation">
             <div class="flt-anim-up">
               <img class="flt-image" src="images/flt-4.png" alt="" />
-              <span style="bottom: 60px" class="flt-desc"
+              <span style="bottom: 100%" class="flt-desc"
                 >Promieniowanie nadfioletowe</span
               >
             </div>
             <span
-              style="display: block; bottom: 0px; left: 15%; font-size: small"
+              style="display: block; bottom: 0px; left: 15%;"
               class="flt-desc"
-              >Maska fotolitograficzna &#8595</span
+              >Maska fotolitograficzna <i class="fa-solid fa-arrow-down"></i></span
             >
             <img class="flt-image" src="images/flt-3.png" alt="" />
             <i
-              id="flt-play-1"
+              id="flt-play-2"
               class="flt-play flt-button fa-regular fa-circle-play"
               ><span class="flt-tip">Odtwórz</span></i
             >
@@ -141,20 +152,185 @@ const slides = [
             powodującą uodpornienie warstwy na działanie roztworu
             wytrawiającego.
           </div>`,
-  "<h2>Slajd 4</h2>",
-  "<h2>Slajd 5</h2>",
-  "<h2>Slajd 6</h2>",
+  `<h3>Etap IV - odsłonięcie warstwy SiO<sub>2</sub></h3>
+          <div class="flt-animation-2">
+            <div class="flt-2images">
+              <img
+                id="flt-img2-1"
+                class="flt-img-2-visible flt-img-2 flt-image"
+                src="images/flt-3a.png"
+                alt=""
+              />
+              <img
+                id="flt-img2-2"
+                class="flt-img-2 flt-image"
+                src="images/flt-5.png"
+                alt=""
+              />
+            </div>
+            <i
+              id="flt-play-3"
+              class="flt-play flt-button fa-regular fa-circle-play"
+              ><span class="flt-tip">Odtwórz</span></i
+            >
+          </div>
+          <div class="flt-text">
+            Płytka jest naświetlana przez
+            <span class="flt-def"
+              >fotomaskę
+              <div class="flt-def-window">
+                To szklany negatyw zawierający obraz fotograficzny
+                poszczególnych warstw (obszarów domieszkowanych, metalizacji,
+                itp). Do zrealizowania pełnego cyklu wytwarzania układu
+                scalonego jest konieczny komplet fotomasek.
+                <img class="flt-image" src="images/flt-2.png" alt="" /></div
+            ></span>
+            osłaniającą określone obszary powierzchni, zatem po
+            <strong>wywołaniu</strong> i <strong>utrwaleniu</strong> warstwa
+            światłoczuła tworzy <strong>obraz negatywowy fotomaski</strong> (są
+            również stosowane emulsje światłoczułe o właściwościach
+            pozytywowych), czyli osłania tylko tę część powierzchni, która była
+            naświetlona.
+          </div>`,
+  `<h3>Etap V - wytrawienie okna w SiO<sub>2</sub></h3>
+          <div class="flt-animation-2">
+            <div class="flt-2images">
+              <img
+                id="flt-img2-1"
+                class="flt-img-2-visible flt-img-2 flt-image"
+                src="images/flt-5.png"
+                alt=""
+              />
+              <img
+                id="flt-img2-2"
+                class="flt-img-2 flt-image"
+                src="images/flt-6.png"
+                alt=""
+              />
+            </div>
+            <i
+              id="flt-play-3"
+              class="flt-play flt-button fa-regular fa-circle-play"
+              ><span class="flt-tip">Odtwórz</span></i
+            >
+          </div>
+          <div class="flt-text">
+            W tej fazie płytka jest poddawana działaniu
+            <span class="flt-def"
+              >kwasu fluorowodorowego
+              <div class="flt-def-window">
+                Jest to wodny roztwór fluorowodoru. Stanowi bezbarwną ciecz o
+                ostrej woni. Stężony kwas zawiera około 70% HF. Tworzy z wodą
+                mieszaninę o temperaturze wrzenia 393K. Rozpuszcza większość
+                metali oprócz złota, platyny i ołowiu. Pod jego wpływem
+                krzemionka SiO<sub>2</sub> ulega przemianie w łatwo lotny
+                SiF<sub>4</sub>.
+              </div></span
+            >
+            w celu wytrawienia
+            <span class="flt-def"
+              >okna
+              <div class="flt-def-window">
+                Wytrawiona przestrzeń w warstwie SiO<sub>2</sub>,
+                Si<sub>3</sub>N<sub>4</sub>, Al, krzemu polikrystalicznego itp.
+                odsłaniająca wybrane obszary płytki podłożowej.
+              </div></span
+            >
+            w odsłoniętej części warstwy <strong>SiO<sub>2</sub></strong
+            >.
+          </div>`,
+  `<h3>Etap VI - usunięcie warstwy światłoczułej</h3>
+          <div class="flt-animation-2">
+            <div class="flt-2images">
+              <img
+                id="flt-img2-1"
+                class="flt-img-2-visible flt-img-2 flt-image"
+                src="images/flt-6.png"
+                alt=""
+              />
+              <span style="bottom: 70px" class="flt-desc"
+                >Końcowy efekt fotolitografii</span
+              >
+              <img
+                id="flt-img2-2"
+                class="flt-img-2 flt-image"
+                src="images/flt-7.png"
+                alt=""
+              />
+            </div>
+            <i
+              id="flt-play-3"
+              class="flt-play flt-button fa-regular fa-circle-play"
+              ><span class="flt-tip">Odtwórz</span></i
+            >
+          </div>
+          <div class="flt-text">
+            Ostatnim etapem
+            <span class="flt-def"
+              >fotolitografii
+              <div class="flt-def-window">
+                Polega na wielokrotnym nakładaniu na powstającą strukturę
+                krzemową światłoczułych masek, które po naświetleniu i
+                potraktowaniu odpowiednim roztworem odsłaniają jedynie wybrane
+                powierzchnie krzemu dla kolejnych procesów. Naświetlanie
+                przypomina w pewnym stopniu wyświetlanie slajdów na ekranie,
+                rolę slajdu pełni maska wzorcowa - podstawowa różnica polega na
+                tym, że naświetlany obraz jest pomniejszoną, a nie powiększoną
+                wersją oryginału.
+              </div></span
+            >
+            jest <strong>usunięcie warstwy emulsji światłoczułej</strong>.
+            Odbywa się to przez działanie odpowiednim odczynnikiem. W ten sposób
+            otrzymuje się strukturę gotową do prowadzenia
+            <span class="flt-def"
+              >domieszkowania lokalnego
+              <div class="flt-def-window">
+                Ideę domieszkowania lokalnego, zwanego również selektywnym
+                ilustruje poniższy rysunek na przykładzie dyfuzji lokalnej boru
+                do podłoża krzemowego typu n. Płytka krzemowa jest pokryta
+                warstwą SiO<sub>2</sub>, w której wykonano otwór. Warstwa
+                dwutlenku krzemu stanowi skuteczną barierę uniemożliwiającą
+                przenikanie domieszek do pokrytej tą warstwą powierzchni
+                półprzewodnika, gdyż współczynnik dyfuzji domieszek SiO<sub
+                  >2</sub
+                >
+                jest ok. 20-krotnie mniejszy niż Si.
+                <img class="flt-image" src="images/flt-8.png" alt="" />
+                Warstwa SiO<sub>2</sub> spełnia więc funkcję maski
+                nieprzepuszczającej atomów domieszki. W związku z tym krzem jest
+                domieszkowany tylko w obszarze okna. W procesie dyfuzji lokalnej
+                funkcję maski może spełniać
+                <strong>warstwa Si<sub>3</sub>N<sub>4</sub></strong
+                >.
+              </div></span
+            >
+            .
+          </div>`,
   //2
+  `<div class="flt-title-slide flt-section">
+            <h2>Technologie planarne</h2>
+          </div>`,
   "<h2>Slajd 7</h2>",
   "<h2>Slajd 8</h2>",
   "<h2>Slajd 9</h2>",
   "<h2>Slajd 10</h2>",
   "<h2>Slajd 11</h2>",
   "<h2>Slajd 12</h2>",
-  //4
+  //3
+  `<div class="flt-title-slide flt-section">
+            <h2>Domieszkowanie lokalne</h2>
+          </div>`,
   "<h2>Slajd 13</h2>",
-  "<h2>Slajd 14</h2>",
-  "<h2>Slajd 15</h2>",
+  //4
+  `<div class="flt-title-slide flt-section">
+            <h2>Nowinki techniczne</h2>
+          </div>`,
+  "<h2>Slajd 18</h2>",
+  "<h2>Slajd 18</h2>",
+  "<h2>Slajd 18</h2>",
+  `<div class="flt-title-slide flt-section">
+            <h2>Dziękuję za uwagę</h2>
+          </div>`,
 ];
 const sections = [
   "Fotolitografia",
@@ -162,7 +338,7 @@ const sections = [
   "Domieszkowanie lokalne",
   "Nowinki techniczne",
 ];
-const sectionNums = [0, 6, 11, 14];
+const sectionNums = [0, 8, 15, 17];
 
 ////SLIDER
 //Buttons
@@ -253,7 +429,6 @@ menuElements.forEach(function (elem, index) {
 tableElements.forEach(function (elem, index) {
   elem.addEventListener("click", function () {
     fltChangeSlide(index);
-    console.log("xd");
   });
 });
 revertButton.addEventListener("click", function () {
@@ -279,6 +454,8 @@ fullScreen.addEventListener("click", fltToggleFullScreen);
 //Buttons
 var defButtons = document.querySelectorAll(".flt-def");
 var play1 = document.getElementById("flt-play-1");
+var play2 = document.getElementById("flt-play-2");
+var play3 = document.getElementById("flt-play-3");
 //Elements
 var defElems = document.querySelectorAll("flt-def-window");
 //Listeners
@@ -290,6 +467,12 @@ defButtons.forEach(function (elem) {
 play1?.addEventListener("click", function () {
   fltSlideAnim1();
 });
+play2?.addEventListener("click", function () {
+  fltSlideAnim2();
+});
+play3?.addEventListener("click", function () {
+  fltSlideAnim3();
+});
 //Functions
 function fltSlideAnim1() {
   element = document.querySelector(".flt-anim-up");
@@ -299,10 +482,39 @@ function fltSlideAnim1() {
     document.querySelector(".flt-desc").classList.add("flt-block");
   }, 500);
 }
+function fltSlideAnim2() {
+  element = document.querySelector(".flt-anim-up");
+  element.style.bottom = "50px";
+  setTimeout(function () {
+    element.style.bottom = "-20px";
+    document.querySelector(".flt-desc").classList.add("flt-block");
+    console.log("xd");
+    setTimeout(function () {
+      element.style.bottom = "50px";
+      console.log("xd");
+      setTimeout(function () {
+        element.style.bottom = "-20px";
+        console.log("xd");
+      }, 500);
+    }, 500);
+  }, 500);
+}
+function fltSlideAnim3() {
+  var img1 = document.getElementById("flt-img2-1");
+  var img2 = document.getElementById("flt-img2-2");
+  img2.classList.remove("flt-img-2-visible");
+  img1.classList.add("flt-img-2-visible");
+  setTimeout(function () {
+    img1.classList.remove("flt-img-2-visible");
+    img2.classList.add("flt-img-2-visible");
+  }, 2000);
+}
 function fltLoadSlide() {
   defElems = document.querySelectorAll("flt-def-window");
   defButtons = document.querySelectorAll(".flt-def");
   play1 = document.getElementById("flt-play-1");
+  play2 = document.getElementById("flt-play-2");
+  play3 = document.getElementById("flt-play-3");
   defButtons.forEach(function (elem) {
     elem.addEventListener("click", function () {
       elem.querySelector(".flt-def-window").classList.toggle("flt-block");
@@ -310,5 +522,11 @@ function fltLoadSlide() {
   });
   play1?.addEventListener("click", function () {
     fltSlideAnim1();
+  });
+  play2?.addEventListener("click", function () {
+    fltSlideAnim2();
+  });
+  play3?.addEventListener("click", function () {
+    fltSlideAnim3();
   });
 }
