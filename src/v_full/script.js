@@ -310,7 +310,45 @@ const slides = [
   `<div class="flt-title-slide flt-section">
             <h2>Technologie planarne</h2>
           </div>`,
-  "<h2>Slajd 7</h2>",
+  `<h2>Technologia planarna</h2>
+          <img class="flt-image" src="images/flt-9.png" alt="" />
+          <div class="flt-text">
+            Pojęcie <strong>technologia planarna</strong>
+            odnosi się do wytwarzania
+            <span class="flt-def"
+              >tranzystorów
+              <div class="flt-def-window">
+                Przyrząd półprzewodnikowy trójelektrodowy, umożliwiający
+                wzmacnianie mocy sygnałów elektrycznych. Stanowi element czynny
+                układów elektronicznych. Pełni funkcję wzmacniacza,
+                przełącznika, detektora itp. Tranzystory dzieli się na:
+                bipolarne i unipolarne (polowe).
+              </div></span
+            >
+            i
+            <span class="flt-def"
+              >układów scalonych
+              <div class="flt-def-window">
+                Miniaturowy układ elektroniczny, w którym część lub wszystkie
+                elementy wraz z ich połączeniami są wytworzone w jednym cyklu
+                technologicznym wewnątrz lub na powierzchni wspólnego podłoża.
+                Miarą złożoności układu scalonego jest tzw. stopień scalenia
+                (skala integracji), określający liczbę elementów w pojedynczej
+                strukturze układu.
+              </div></span
+            >
+            w płytkach krzemowych i obejmuje swym znaczeniem zespół procesów
+            technologicznych, w których są powtarzane sekwencje trzech operacji:
+            <ul>
+              <li>maskowania podłoża krzemowego warstwą Si</li>
+              <li>litografii</li>
+              <li>domieszkowania lokalnego.</li>
+            </ul>
+            Najbardziej charakterystyczną cechą technologii planarnej jest to,
+            że wszystkie procesy obróbcze są prowadzone przez jedną
+            powierzchnię, przy czym powierzchnia ta stanowi płaszczyznę, stąd
+            pochodzi przymiotnik <i>planarna</i> - inaczej płaszczyznowa.
+          </div>`,
   "<h2>Slajd 8</h2>",
   "<h2>Slajd 9</h2>",
   "<h2>Slajd 10</h2>",
@@ -320,14 +358,125 @@ const slides = [
   `<div class="flt-title-slide flt-section">
             <h2>Domieszkowanie lokalne</h2>
           </div>`,
-  "<h2>Slajd 13</h2>",
+  `<h3>Domieszkowanie lokalne</h3>
+          <div class="flt-text">
+            Ideę domieszkowania lokalnego, zwanego również selektywnym ilustruje
+            poniższy rysunek na przykładzie dyfuzji lokalnej boru do podłoża
+            krzemowego typu n. Płytka krzemowa jest pokryta warstwą
+            SiO<sub>2</sub>, w której wykonano otwór. Warstwa dwutlenku krzemu
+            stanowi skuteczną barierę uniemożliwiającą przenikanie domieszek do
+            pokrytej tą warstwą powierzchni półprzewodnika, gdyż współczynnik
+            dyfuzji domieszek SiO<sub>2</sub>
+            jest ok. 20-krotnie mniejszy niż Si.
+            <img class="flt-image" src="images/flt-8.png" alt="" />
+            Warstwa SiO<sub>2</sub> spełnia więc funkcję <span class="flt-def"
+              >fotomaski
+              <div class="flt-def-window">
+                To szklany negatyw zawierający obraz fotograficzny
+                poszczególnych warstw (obszarów domieszkowanych, metalizacji,
+                itp). Do zrealizowania pełnego cyklu wytwarzania układu
+                scalonego jest konieczny komplet fotomasek.
+                <img
+                  class="flt-image"
+                  src="images/flt-2.png"
+                  alt=""
+                /></div></span
+            >
+            nieprzepuszczającej atomów domieszki. W związku z tym krzem jest
+            domieszkowany tylko w obszarze <span class="flt-def"
+              >okna
+              <div class="flt-def-window">
+                Wytrawiona przestrzeń w warstwie SiO<sub>2</sub>,
+                Si<sub>3</sub>N<sub>4</sub>, Al, krzemu polikrystalicznego itp.
+                odsłaniająca wybrane obszary płytki podłożowej.
+              </div></span
+            >. W procesie dyfuzji lokalnej
+            funkcję maski może spełniać
+            <strong>warstwa Si<sub>3</sub>N<sub>4</sub></strong
+            >.
+          </div>`,
   //4
   `<div class="flt-title-slide flt-section">
             <h2>Nowinki techniczne</h2>
           </div>`,
-  "<h2>Slajd 18</h2>",
-  "<h2>Slajd 18</h2>",
-  "<h2>Slajd 18</h2>",
+  `<h2>Nowinki techniczne</h2>
+          <img class="flt-image" src="images/flt-10.png" alt="" />
+          <div class="flt-text">
+            Będąca siłą napędową mikroelektroniki potrzeba upakowania wewnątrz
+            układu scalonego coraz większej liczby
+            <span class="flt-def"
+              >tranzystorów
+              <div class="flt-def-window">
+                Przyrząd półprzewodnikowy trójelektrodowy, umożliwiający
+                wzmacnianie mocy sygnałów elektrycznych. Stanowi element czynny
+                układów elektronicznych. Pełni funkcję wzmacniacza,
+                przełącznika, detektora itp. Tranzystory dzieli się na:
+                bipolarne i unipolarne (polowe).
+              </div></span
+            >
+            zmusza producentów do sięgania po technologie o coraz mniejszym
+            wymiarze charakterystycznym. To z kolei wymusza stosowanie w
+            wykorzystywanym do produkcji układów procesie
+            <span class="flt-def"
+              >fotolitograficznym
+              <div class="flt-def-window">
+                Polega na wielokrotnym nakładaniu na powstającą strukturę
+                krzemową światłoczułych masek, które po naświetleniu i
+                potraktowaniu odpowiednim roztworem odsłaniają jedynie wybrane
+                powierzchnie krzemu dla kolejnych procesów. Naświetlanie
+                przypomina w pewnym stopniu wyświetlanie slajdów na ekranie,
+                rolę slajdu pełni maska wzorcowa - podstawowa różnica polega na
+                tym, że naświetlany obraz jest pomniejszoną, a nie powiększoną
+                wersją oryginału.
+              </div></span
+            >
+            światła o coraz mniejszej długości fali. Obecnie stosowane procesy
+            nie używają już światła widzialnego, a
+            <span class="flt-def"
+              >promieniowania nadfioletowego
+              <div class="flt-def-window">
+                Jest to promieniowanie elektromagnetyczne o fali długości 10-400
+                nm, nie wywołujące wrażeń wzrokowych u człowieka; obszar
+                promieniowania nadfioletowego dzieli się umownie na 4 części:
+                zakres A o długości fali 315-400 nm, zakres B 280-315 nm, zakres
+                C 200-280 nm i nadfiolet próżniowy 10-200 nm, lub też dzieli się
+                na nadfiolet bliski (200-400 nm) i nadfiolet daleki, próżniowy
+                (10-200 nm), który swoją nazwę zawdzięcza temu, że można go
+                badać tylko w próżni, gdyż fale o odpowiadających mu długościach
+                są bardzo silnie pochłaniane przez powietrze. Do detekcji
+                promieniowania nadfioletowego wykorzystuje się: fotoogniwa,
+                fotopowielacze, przetworniki promieniowania.
+                <br />
+                <br />
+                Najsilniejszym naturalnym źródłem promieniowania nadfioletowego
+                jest Słońce, zaś najbardziej rozpowszechnionymi sztucznymi
+                źródłami promieniowania nadfioletowego są lampy wyładowcze
+                (głównie rtęciowe). Dzięki swoim właściwościom promieniowanie
+                nadfioletowe jest wykorzystywane m.in. w technice oświetleniowej
+                (świetlówki), analizie luminescencyjnej, badaniach
+                nieniszczących, do sterylizacji pomieszczeń, w biologii w
+                badaniach mikroskopowych tkanek i komórek, w kryminalistyce,
+                muzealnictwie, w przemyśle do przyspieszania procesów
+                polimeryzacji tworzyw sztucznych. Promieniowanie nadfioletowe
+                odkryli 1801 J. Ritter i W.H. Wollaston.
+              </div></span
+            >. Przy długości fali ok. <strong>248 nanometrów</strong> możliwe
+            jest uzyskanie wymiaru charakterystycznego rzędu 150-120 nanometrów.
+          </div>`,
+  `<h2>Metoda konkurencyjna dla fotolitografii</h2>
+          <img class="flt-image" src="images/flt-11.png" width="100px" alt="" />
+          <div class="flt-text">
+            W dzisiejszych czasach do produkcji procesorów wykorzystuje się
+            proces <strong>rentgenolitografii</strong>. Odmiana ta polega na
+            użyciu fal o długości od 0,4 do 1 nm, czyli promieni rentgenowskich.
+            Jako podłoża masek do rentgenolitografii stosowane są cienkie
+            membrany krzemowe oraz takie materiały jak tytan, SiC, mylar,
+            poliamidy czy inne, natomiast jako materiał pochłaniający
+            promieniowanie - złoto. Podstawową zaletą zastosowania promieni
+            rentgenowskich o długości fali około 800 razy krótszej od fal
+            stosowanych w klasycznej fotoligrafii jest uzyskanie większej
+            rozdzielczości.
+          </div>`,
   `<div class="flt-title-slide flt-section">
             <h2>Dziękuję za uwagę</h2>
           </div>`,
@@ -392,7 +541,7 @@ function fltCheckSections() {
     var a = i + 1;
     if (
       (currentSlide >= sectionNums[i] && currentSlide < sectionNums[a]) ||
-      currentSlide >= sectionNums[2] + 1
+      currentSlide >= sectionNums[3]
     ) {
       document
         .getElementById("flt-menu-" + currentSection)
