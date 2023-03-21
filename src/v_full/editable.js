@@ -1,453 +1,21 @@
-<div class="flt-slide-container">
-  <!--Menu górne-->
+////SETTINGS
+//Tytuł prezentacji
+const title = "Fotolitografia i technologie planarne";
 
-  <aside class="flt-top-menu">
-    <i
-      id="flt-top-menu-arrow"
-      class="flt-button flt-top-menu-arrow fa-solid fa-chevron-down"
-    ></i>
-    <span id="flt-menu-1" class="flt-menu-active flt-button flt-side-elem">
-      Fotolitografia
-    </span>
-    <span id="flt-menu-2" class="flt-side-elem flt-button">
-      Technologie planarne
-    </span>
-    <span id="flt-menu-3" class="flt-side-elem flt-button">
-      Domieszkowanie lokalne
-    </span>
-    <span id="flt-menu-4" class="flt-side-elem flt-button">
-      Nowinki techniczne
-    </span>
-  </aside>
-
-  <!--Slajd tytułowy-->
-
-  <div id="flt-slide" class="flt-slide">
-    <div class="flt-title-slide">
-      <h2>Fotolitografia i technologia planarna</h2>
-      <h4>
-        Wykonał Marcin Bator
-        <h5>na podstawie prezentacji Waldemara Obirka</h5>
-      </h4>
-    </div>
-  </div>
-  <nav class="flt-slides-nav">
-    <i id="flt-revert" class="flt-none flt-button fa-solid fa-angles-left">
-      <span class="flt-tip">Od nowa</span>
-    </i>
-    <i id="flt-left" class="flt-none flt-button fa-solid fa-chevron-left">
-      <span class="flt-tip">Poprzedni</span>
-    </i>
-    <i id="flt-right" class="flt-button fa-solid fa-chevron-right"
-      ><span class="flt-tip">Następny</span></i
-    >
-    <i
-      id="flt-full"
-      class="flt-button fa-solid fa-up-right-and-down-left-from-center"
-    >
-      <span class="flt-tip">Pełny ekran</span>
-    </i>
-  </nav>
-</div>
-<nav class="flt-slides-nav">
-  <a href="#bottom">
-    <i id="flt-table-button" class="flt-button fa-solid fa-bars"
-      ><span class="flt-tip">Pokaż/ukryj spis treści</span></i
-    ></a
-  >
-</nav>
-
-<!--Spis treści-->
-
-<ol id="flt-table" class="flt-table">
-  <h4 class="flt-table-title">Spis treści</h4>
-  <li id="bottom" class="flt-button flt-table-elem">Tytuł</li>
-  <li id="bottom" class="flt-t-sec flt-button flt-table-elem">
-    <strong>Fotolitografia</strong>
-  </li>
-  <li class="flt-button flt-table-elem">Podstawowe fazy fotolitografii</li>
-  <li class="flt-button flt-table-elem">
-    Nakładanie emulsji światłoczułej na podłoże Si
-  </li>
-  <li class="flt-button flt-table-elem">Naświetlanie przez fotomaskę</li>
-  <li id="bottom" class="flt-button flt-table-elem">
-    Odsłonięcie warstwy SiO<sub>2</sub>
-  </li>
-  <li id="bottom" class="flt-button flt-table-elem">
-    Wytrawienie okna w SiO<sub>2</sub>
-  </li>
-  <li id="bottom" class="flt-button flt-table-elem">
-    Usunięcie warstwy światłoczułej
-  </li>
-  <li id="bottom" class="flt-t-sec flt-button flt-table-elem">
-    <strong>Technologia planarna</strong>
-  </li>
-  <li id="bottom" class="flt-button flt-table-elem">
-    Pojęcie technologii planarnej
-  </li>
-  <li id="bottom" class="flt-button flt-table-elem">Utlenianie</li>
-  <li id="bottom" class="flt-button flt-table-elem">Fotolitografia</li>
-  <li id="bottom" class="flt-button flt-table-elem">Dyfuzja</li>
-  <li id="bottom" class="flt-button flt-table-elem">Efekt końcowy</li>
-  <li id="bottom" class="flt-t-sec flt-button flt-table-elem">
-    <strong>Domieszkowanie lokalne</strong>
-  </li>
-  <li id="bottom" class="flt-button flt-table-elem">Definicja</li>
-  <li id="bottom" class="flt-t-sec flt-button flt-table-elem">
-    <strong>Nowinki techniczne</strong>
-  </li>
-  <li id="bottom" class="flt-button flt-table-elem">Układy scalone</li>
-  <li id="bottom" class="flt-button flt-table-elem">Procesory</li>
-</ol>
-<style>
-  /*Slider styles*/
-  .flt-body > *,
-  .flt-body {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: "Roboto", sans-serif;
-  }
-  .flt-body {
-    width: 100vw;
-    min-height: 90vh;
-    overflow-x: hidden;
-    scroll-behavior: smooth !important;
-  }
-  .flt-body a {
-    text-decoration: none;
-    color: rgb(136, 136, 136);
-  }
-  .flt-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-  }
-  .flt-title {
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(242, 242, 242, 1) 50%,
-      rgba(235, 235, 235, 1) 100%
-    );
-    width: 100%;
-    text-align: center;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgb(38, 111, 219);
-    font-size: xx-large;
-    text-shadow: 0px 0px 1px rgb(255, 255, 255);
-    flex-direction: column;
-    padding: 10px;
-    margin-top: 10px;
-  }
-  .flt-slide-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .flt-slide-container:fullscreen {
-    color: white;
-  }
-  .flt-subtitle {
-    font-size: small;
-    color: black;
-  }
-  .flt-top-menu {
-    width: 80vw;
-    display: flex;
-    justify-content: space-evenly;
-    text-align: center;
-  }
-  .flt-slide {
-    height: 70vh;
-    width: 70vw;
-    border: 1px solid black;
-    margin: 10px;
-    padding: 20px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    overflow-y: auto;
-  }
-  .flt-slide h3 {
-    justify-self: flex-start;
-  }
-  .flt-slide-container:fullscreen .flt-slide {
-    height: 80vh;
-    width: 90vw;
-    background: white;
-    color: black;
-  }
-  .flt-slides-nav {
-    width: 98vw;
-    display: flex;
-    justify-content: space-evenly;
-    font-size: xx-large;
-  }
-  ol.flt-table {
-    display: flex;
-    width: 90%;
-    align-items: flex-start;
-    flex-direction: column;
-    display: none;
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 10px;
-    border: 1px solid black;
-    padding: 10px;
-    overflow-y: auto;
-    margin-bottom: 50px;
-  }
-  .flt-table-elem {
-    margin: 3px 30px;
-    position: relative;
-    left: 20px;
-  }
-  .flt-menu-active {
-    color: rgb(38, 111, 219);
-  }
-  .flt-none {
-    visibility: hidden;
-  }
-  .flt-flex {
-    display: flex !important;
-  }
-  .flt-block {
-    display: block !important;
-  }
-  .flt-top-menu-arrow {
-    display: none !important;
-  }
-  .flt-button::before {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .flt-button ::selection {
-    color: none;
-    background: none;
-  }
-  .flt-button:hover {
-    cursor: pointer;
-    color: rgb(38, 111, 219);
-  }
-  .flt-tip {
-    position: relative;
-    bottom: 80px;
-    font-size: small;
-    background: rgb(255, 255, 255);
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 10px;
-    visibility: hidden;
-    font-family: "Roboto", sans-serif;
-  }
-  .flt-button:hover .flt-tip {
-    visibility: visible;
-  }
-  .flt-button {
-    font-size: xx-large;
-  }
-  @media (max-width: 1000px) {
-    .flt-top-menu-arrow {
-      display: block !important;
-    }
-    .flt-top-menu {
-      flex-direction: column;
-    }
-    .flt-side-elem {
-      display: none;
-    }
-    .flt-slide {
-      height: 60vh;
-      width: 90vw;
-    }
-    .flt-title {
-      font-size: large;
-    }
-    .flt-body i,
-    .flt-body h3,
-    .flt-body h2 {
-      font-size: small !important;
-    }
-    .flt-button {
-      font-size: small;
-    }
-    .flt-button:hover .flt-tip {
-      visibility: hidden;
-    }
-  }
-
-  /*Content styles*/
-  .flt-def-window {
-    display: none;
-    position: relative;
-    left: 10px;
-    border: 1px solid lightgrey;
-    padding: 10px;
-    margin: 10px 0;
-    color: grey;
-  }
-  .flt-def {
-    color: rgb(38, 111, 219);
-  }
-  .flt-def:hover {
-    cursor: pointer;
-  }
-  .flt-image {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .flt-text {
-    display: block;
-    text-align: left;
-    font-size: x-large;
-    margin: 30px 50px;
-  }
-  .flt-slide h3 {
-    font-size: x-large;
-  }
-  .flt-slide h2 {
-    font-size: xx-large;
-  }
-  .flt-animation1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 20%;
-    margin-top: 80px;
-  }
-  .flt-animation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 20%;
-    margin-top: 80px;
-    max-width: 50%;
-  }
-  span.flt-button {
-    font-size: medium !important;
-  }
-  ol .flt-button {
-    font-size: medium !important;
-  }
-  .flt-play {
-    margin-top: 20px;
-  }
-  .flt-anim-up {
-    position: relative;
-    bottom: 50px;
-    transition: bottom 1s ease-in-out;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  .flt-desc {
-    position: relative;
-    bottom: 50px;
-    display: none;
-    font-size: large;
-    transition: display 1s ease-in-out;
-  }
-  .flt-title-slide {
-    text-align: center;
-    background-image: url("images/flt-background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    text-shadow: 0 0 3px black;
-    font-size: x-large;
-  }
-  .flt-section {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .flt-section h2 {
-    font-size: 50px !important;
-  }
-  .flt-title-slide h2 {
-    font-size: xx-large;
-  }
-  .flt-2images {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 70%;
-  }
-  .flt-img-2 {
-    position: absolute;
-    bottom: 0;
-    left: 25%;
-    opacity: 0;
-    transition: opacity 3s ease-in-out;
-  }
-  .flt-img-2-visible {
-    opacity: 1;
-  }
-  .flt-animation-2 {
-    min-height: 40%;
-  }
-  #flt-play-3 {
-    width: 100%;
-  }
-  #flt-play-3 .flt-tip {
-    left: 50%;
-  }
-  .flt-t-sec {
-    left: 0;
-  }
-  @media (max-width: 1000px) {
-    .flt-text {
-      font-size: large;
-      text-align: left;
-    }
-    .flt-img-2 {
-      max-width: 80%;
-      left: 10%;
-    }
-    .flt-section h2 {
-      font-size: x-large;
-    }
-  }
-</style>
-<script
-  src="https://kit.fontawesome.com/bbfe665594.js"
-  crossorigin="anonymous"
-></script>
-<script async defer>
-  ////SETTINGS
-  //Tytuł prezentacji
-  const title = "Fotolitografia i technologie planarne";
-
-  //Tablica z kodem slajdów
-  const slides = [
-    //1
-    `<div class="flt-title-slide">
+//Tablica z kodem slajdów
+const slides = [
+  //1
+  `<div class="flt-title-slide">
             <h2>Fotolitografia i technologia planarna</h2>
             <h4>
               Wykonał Marcin Bator
               <h5>na podstawie prezentacji Waldemara Obirka</h5>
             </h4>
           </div>`,
-    `<div class="flt-title-slide flt-section">
+  `<div class="flt-title-slide flt-section">
             <h2>Fotolitografia</h2>
           </div>`,
-    `<h2>Podstawowe fazy fotolitografii</h2>
+  `<h2>Podstawowe fazy fotolitografii</h2>
     <h3>Etap I</h3>
     <img class="flt-image" src="images/flt-1.png" alt="" />
     <div class="flt-text">
@@ -480,7 +48,7 @@
       w warstwie SiO<sub>2</sub>.
     </div>
     `,
-    `
+  `
     <h3>Etap II - Nakładanie emulsji światłoczułej na podłoże Si</h3>
     <div class="flt-animation1">
       <div
@@ -503,7 +71,7 @@
       emulsji, dlatego płytka jest mocowana przyssawką próżniową do
       stolika wykonującego szybki ruch obrotowy (ok. 20 000 obr/min).
     </div>`,
-    `<h3>Etap III - Naświetlanie przez fotomaskę</h3>
+  `<h3>Etap III - Naświetlanie przez fotomaskę</h3>
           <div style="min-height: 40%;" class="flt-animation1">
             <div class="flt-anim-up">
               <img class="flt-image" src="images/flt-4.png" alt="" />
@@ -584,7 +152,7 @@
             powodującą uodpornienie warstwy na działanie roztworu
             wytrawiającego.
           </div>`,
-    `<h3>Etap IV - odsłonięcie warstwy SiO<sub>2</sub></h3>
+  `<h3>Etap IV - odsłonięcie warstwy SiO<sub>2</sub></h3>
           <div class="flt-animation-2">
             <div class="flt-2images">
               <img
@@ -624,7 +192,7 @@
             pozytywowych), czyli osłania tylko tę część powierzchni, która była
             naświetlona.
           </div>`,
-    `<h3>Etap V - wytrawienie okna w SiO<sub>2</sub></h3>
+  `<h3>Etap V - wytrawienie okna w SiO<sub>2</sub></h3>
           <div class="flt-animation-2">
             <div class="flt-2images">
               <img
@@ -671,7 +239,7 @@
             w odsłoniętej części warstwy <strong>SiO<sub>2</sub></strong
             >.
           </div>`,
-    `<h3>Etap VI - usunięcie warstwy światłoczułej</h3>
+  `<h3>Etap VI - usunięcie warstwy światłoczułej</h3>
           <div class="flt-animation-2">
             <div class="flt-2images">
               <img
@@ -738,11 +306,11 @@
             >
             .
           </div>`,
-    //2
-    `<div class="flt-title-slide flt-section">
+  //2
+  `<div class="flt-title-slide flt-section">
             <h2>Technologia planarna</h2>
           </div>`,
-    `<h2>Technologia planarna</h2>
+  `<h2>Technologia planarna</h2>
           <img class="flt-image" src="images/flt-9.png" alt="" />
           <div class="flt-text">
             Pojęcie <strong>technologia planarna</strong>
@@ -781,7 +349,7 @@
             powierzchnię, przy czym powierzchnia ta stanowi płaszczyznę, stąd
             pochodzi przymiotnik <i>planarna</i> - inaczej płaszczyznowa.
           </div>`,
-    `<h3>Etap I - utlenianie</h3>
+  `<h3>Etap I - utlenianie</h3>
           <div class="flt-animation-2">
             <div class="flt-2images">
               <img
@@ -840,7 +408,7 @@
               </div></span
             >.
           </div>`,
-    `<h3>Etap II - Fotolitografia</h3>
+  `<h3>Etap II - Fotolitografia</h3>
           <div class="flt-animation-2">
             <div class="flt-2images">
               <img
@@ -910,7 +478,7 @@
               </div></span
             >.
           </div>`,
-    `<h3>Etap III - dyfuzja</h3>
+  `<h3>Etap III - dyfuzja</h3>
           <div class="flt-animation-2">
             <div class="flt-2images">
               <img
@@ -947,7 +515,7 @@
             niezamaskowanych warstwą SiO<sub>2</sub>. W ten sposób otrzymuje się
             warstwe <i>typu p (lub n)</i> o precyzyjnie określonych kształtach.
           </div>`,
-    `<h3>Etap V - kilkakrotne powtórzenie wszystkich etapów</h3>
+  `<h3>Etap V - kilkakrotne powtórzenie wszystkich etapów</h3>
           <img class="flt-image" src="images/flt-18.png" alt="" />
           <div class="flt-text">
             Kilkakrotne powtórzenie tej sekwencji procesów, przy różnych
@@ -969,11 +537,11 @@
               </div></span
             >.
           </div>`,
-    //3
-    `<div class="flt-title-slide flt-section">
+  //3
+  `<div class="flt-title-slide flt-section">
             <h2>Domieszkowanie lokalne</h2>
           </div>`,
-    `<h3>Domieszkowanie lokalne</h3>
+  `<h3>Domieszkowanie lokalne</h3>
           <div class="flt-text">
             Ideę domieszkowania lokalnego, zwanego również selektywnym ilustruje
             poniższy rysunek na przykładzie dyfuzji lokalnej boru do podłoża
@@ -1010,11 +578,11 @@
             <strong>warstwa Si<sub>3</sub>N<sub>4</sub></strong
             >.
           </div>`,
-    //4
-    `<div class="flt-title-slide flt-section">
+  //4
+  `<div class="flt-title-slide flt-section">
             <h2>Nowinki techniczne</h2>
           </div>`,
-    `<h2>Nowinki techniczne</h2>
+  `<h2>Nowinki techniczne</h2>
           <img class="flt-image" src="images/flt-10.png" alt="" />
           <div class="flt-text">
             Będąca siłą napędową mikroelektroniki potrzeba upakowania wewnątrz
@@ -1078,7 +646,7 @@
             >. Przy długości fali ok. <strong>248 nanometrów</strong> możliwe
             jest uzyskanie wymiaru charakterystycznego rzędu 150-120 nanometrów.
           </div>`,
-    `<h2>Metoda konkurencyjna dla fotolitografii</h2>
+  `<h2>Metoda konkurencyjna dla fotolitografii</h2>
           <img class="flt-image" src="images/flt-11.png" width="100px" alt="" />
           <div class="flt-text">
             W dzisiejszych czasach do produkcji <strong>procesorów</strong> wykorzystuje się
@@ -1092,212 +660,18 @@
             stosowanych w klasycznej fotoligrafii jest uzyskanie większej
             rozdzielczości.
           </div>`,
-    `<div class="flt-title-slide flt-section">
+  `<div class="flt-title-slide flt-section">
             <h2>Dziękuję za uwagę</h2>
           </div>`,
-  ];
+];
 
-  //Nazwy sekcji
-  const sections = [
-    "Fotolitografia",
-    "Technologia planarna",
-    "Domieszkowanie lokalne",
-    "Nowinki techniczne",
-  ];
+//Nazwy sekcji
+const sections = [
+  "Fotolitografia",
+  "Technologia planarna",
+  "Domieszkowanie lokalne",
+  "Nowinki techniczne",
+];
 
-  //Numery slajdów od których zaczyna się dana sekcja
-  const sectionNums = [1, 9, 15, 17];
-  ////SLIDER
-  //Buttons
-  const revertButton = document.getElementById("flt-revert");
-  const leftButton = document.getElementById("flt-left");
-  const rightButton = document.getElementById("flt-right");
-  const tableButton = document.getElementById("flt-table-button");
-  const mobileMenuButton = document.getElementById("flt-top-menu-arrow");
-  const fullScreen = document.getElementById("flt-full");
-
-  //Elements
-  const slide = document.getElementById("flt-slide");
-  const table = document.getElementById("flt-table");
-  const tableElements = document.querySelectorAll(".flt-table-elem");
-  const menuElements = document.querySelectorAll(".flt-side-elem");
-  const slidesContainer = document.querySelector(".flt-slide-container");
-
-  //Indicators
-  var currentSlide = 0;
-  var currentSection = 1;
-
-  //Functions
-  function fltSettings() {
-    document.getElementById("flt-title").textContent = title;
-  }
-  function fltChangeSlide(num) {
-    slide.innerHTML = slides[num];
-    currentSlide = num;
-    slideIndicator = currentSlide + 1;
-    console.log("FLTSlide: " + slideIndicator);
-    fltCheckArrows();
-    fltCheckSections();
-    fltLoadSlide();
-  }
-  function fltCheckArrows() {
-    if (currentSlide > 0) {
-      leftButton.classList.remove("flt-none");
-      revertButton.classList.remove("flt-none");
-    } else {
-      leftButton.classList.add("flt-none");
-      revertButton.classList.add("flt-none");
-    }
-    if (currentSlide == slides.length - 1) {
-      rightButton.classList.add("flt-none");
-    } else {
-      rightButton.classList.remove("flt-none");
-    }
-  }
-  function fltCheckSections() {
-    for (var i = 0; i < sectionNums.length; i++) {
-      var a = i + 1;
-      if (
-        (currentSlide >= sectionNums[i] - 1 &&
-          currentSlide < sectionNums[a] - 1) ||
-        currentSlide >= sectionNums[sectionNums.length - 1] - 1
-      ) {
-        document
-          .getElementById("flt-menu-" + currentSection)
-          .classList.remove("flt-menu-active");
-        document
-          .getElementById("flt-menu-" + a)
-          .classList.add("flt-menu-active");
-        currentSection = a;
-        console.log("FLTSection: " + currentSection);
-      }
-    }
-  }
-  function fltToggleFullScreen() {
-    if (slidesContainer.requestFullscreen) {
-      slidesContainer.requestFullscreen();
-    } else if (slidesContainer.webkitRequestFullscreen) {
-      slidesContainer.webkitRequestFullscreen();
-    } else if (slidesContainer.msRequestFullscreen) {
-      slidesContainer.msRequestFullscreen();
-    }
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) {
-      document.msExitFullscreen();
-    }
-  }
-
-  //Listeners
-  menuElements.forEach(function (elem, index) {
-    elem.addEventListener("click", function () {
-      fltChangeSlide(sectionNums[index]);
-    });
-  });
-  tableElements.forEach(function (elem, index) {
-    elem.addEventListener("click", function () {
-      fltChangeSlide(index);
-    });
-  });
-  revertButton.addEventListener("click", function () {
-    fltChangeSlide(0);
-  });
-  leftButton.addEventListener("click", function () {
-    fltChangeSlide(currentSlide - 1);
-  });
-  rightButton.addEventListener("click", function () {
-    fltChangeSlide(currentSlide + 1);
-  });
-  tableButton.addEventListener("click", function () {
-    table.classList.toggle("flt-flex");
-  });
-  mobileMenuButton.addEventListener("click", function () {
-    menuElements.forEach(function (elem) {
-      elem.classList.toggle("flt-flex");
-    });
-  });
-  fullScreen.addEventListener("click", fltToggleFullScreen);
-
-  ////CONTENT
-  //Buttons
-  var defButtons = document.querySelectorAll(".flt-def");
-  var play1 = document.getElementById("flt-play-1");
-  var play2 = document.getElementById("flt-play-2");
-  var play3 = document.getElementById("flt-play-3");
-  //Elements
-  var defElems = document.querySelectorAll("flt-def-window");
-  //Listeners
-  defButtons.forEach(function (elem) {
-    elem.addEventListener("click", function () {
-      elem.querySelector(".flt-def-window").classList.toggle("flt-block");
-    });
-  });
-  play1?.addEventListener("click", function () {
-    fltSlideAnim1();
-  });
-  play2?.addEventListener("click", function () {
-    fltSlideAnim2();
-  });
-  play3?.addEventListener("click", function () {
-    fltSlideAnim3();
-  });
-  //Functions
-  function fltSlideAnim1() {
-    element = document.querySelector(".flt-anim-up");
-    element.style.bottom = "50px";
-    setTimeout(function () {
-      element.style.bottom = "0px";
-      document.querySelector(".flt-desc").classList.add("flt-block");
-    }, 500);
-  }
-  function fltSlideAnim2() {
-    element = document.querySelector(".flt-anim-up");
-    element.style.bottom = "50px";
-    setTimeout(function () {
-      element.style.bottom = "-20px";
-      document.querySelector(".flt-desc").classList.add("flt-block");
-      console.log("xd");
-      setTimeout(function () {
-        element.style.bottom = "50px";
-        console.log("xd");
-        setTimeout(function () {
-          element.style.bottom = "-20px";
-          console.log("xd");
-        }, 500);
-      }, 500);
-    }, 500);
-  }
-  function fltSlideAnim3() {
-    var img1 = document.getElementById("flt-img2-1");
-    var img2 = document.getElementById("flt-img2-2");
-    img2.classList.remove("flt-img-2-visible");
-    img1.classList.add("flt-img-2-visible");
-    setTimeout(function () {
-      img1.classList.remove("flt-img-2-visible");
-      img2.classList.add("flt-img-2-visible");
-    }, 2000);
-  }
-  function fltLoadSlide() {
-    defElems = document.querySelectorAll("flt-def-window");
-    defButtons = document.querySelectorAll(".flt-def");
-    play1 = document.getElementById("flt-play-1");
-    play2 = document.getElementById("flt-play-2");
-    play3 = document.getElementById("flt-play-3");
-    defButtons.forEach(function (elem) {
-      elem.addEventListener("click", function () {
-        elem.querySelector(".flt-def-window").classList.toggle("flt-block");
-      });
-    });
-    play1?.addEventListener("click", function () {
-      fltSlideAnim1();
-    });
-    play2?.addEventListener("click", function () {
-      fltSlideAnim2();
-    });
-    play3?.addEventListener("click", function () {
-      fltSlideAnim3();
-    });
-  }
-</script>
+//Numery slajdów od których zaczyna się dana sekcja
+const sectionNums = [1, 9, 15, 17];
