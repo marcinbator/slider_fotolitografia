@@ -1,42 +1,9 @@
-<!--Style definicji-->
-<style>
-  .flt-def-window {
-    display: none;
-    position: relative;
-    left: 10px;
-    border: 1px solid lightgrey;
-    padding: 10px;
-    margin: 10px 0;
-    color: grey;
-  }
-  .flt-def {
-    color: rgb(38, 111, 219);
-  }
-  .flt-def:hover {
-    cursor: pointer;
-  }
-  .flt-block {
-    display: block !important;
-  }
-</style>
-
-<!--Kod HTML do definicji-->
 <span class="flt-def"
-  >fotomaskę
+  >fotomaskę <!--Definiowane pojęcie-->
   <div class="flt-def-window">
     To szklany negatyw zawierający obraz fotograficzny poszczególnych warstw
     (obszarów domieszkowanych, metalizacji, itp). Do zrealizowania pełnego cyklu
-    wytwarzania układu scalonego jest konieczny komplet fotomasek.
+    wytwarzania układu scalonego jest konieczny komplet fotomasek. <!--Definicja pojęcia-->
     <img class="flt-image" src="images/flt-2.png" alt="" /></div
 ></span>
 
-<!--Kod JS do obsługi działania definicji-->
-<script async defer>
-  var defButtons = document.querySelectorAll(".flt-def");
-  var defElems = document.querySelectorAll("flt-def-window");
-  defButtons.forEach(function (elem) {
-    elem.addEventListener("click", function () {
-      elem.querySelector(".flt-def-window").classList.toggle("flt-block");
-    });
-  });
-</script>
