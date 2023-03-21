@@ -6,7 +6,7 @@ const title = "Fotolitografia i technologie planarne";
 const slides = [
   //1
   `<div class="flt-title-slide">
-            <h2>Fotolitografia i technologie planarne</h2>
+            <h2>Fotolitografia i technologia planarna</h2>
             <h4>
               Wykonał Marcin Bator
               <h5>na podstawie prezentacji Waldemara Obirka</h5>
@@ -308,7 +308,7 @@ const slides = [
           </div>`,
   //2
   `<div class="flt-title-slide flt-section">
-            <h2>Technologie planarne</h2>
+            <h2>Technologia planarna</h2>
           </div>`,
   `<h2>Technologia planarna</h2>
           <img class="flt-image" src="images/flt-9.png" alt="" />
@@ -349,11 +349,194 @@ const slides = [
             powierzchnię, przy czym powierzchnia ta stanowi płaszczyznę, stąd
             pochodzi przymiotnik <i>planarna</i> - inaczej płaszczyznowa.
           </div>`,
-  "<h2>Slajd 8</h2>",
-  "<h2>Slajd 9</h2>",
-  "<h2>Slajd 10</h2>",
-  "<h2>Slajd 11</h2>",
-  "<h2>Slajd 12</h2>",
+  `<h3>Etap I - utlenianie</h3>
+          <div class="flt-animation-2">
+            <div class="flt-2images">
+              <img
+                id="flt-img2-1"
+                class="flt-img-2-visible flt-img-2 flt-image"
+                src="images/flt-12.png"
+                alt=""
+              />
+              <img
+                id="flt-img2-2"
+                class="flt-img-2 flt-image"
+                src="images/flt-13.png"
+                alt=""
+              />
+            </div>
+            <i
+              id="flt-play-3"
+              class="flt-play flt-button fa-regular fa-circle-play"
+              ><span class="flt-tip">Odtwórz</span></i
+            >
+          </div>
+          <div class="flt-text">
+            Najpierw płytka podłożowa (Si) jest
+            <span class="flt-def"
+              >utleniana
+              <div class="flt-def-window">
+                To proces polegający na odłączeniu elektronów od jonu, atomu lub
+                grupy atomów, w wyniku czego wzrasta stopień utlenienia
+                pierwiastka oddającego elektrony. Substancja utleniająca jest
+                <strong>utleniaczem</strong>, zaś utleniana -
+                <strong>reduktorem</strong>. <br /><br />
+                Utlenianie prowadzi do uzyskania związku bogatszego w tlen. Jako
+                katalizatory najczęsciej stosuje się miedź, srebro oraz ich
+                tlenki.
+              </div></span
+            >
+            w celu wytworzenia warstwy
+            <strong>SiO<sub>2</sub></strong> spełniającej później funkcję
+            <span class="flt-def"
+              >maski
+              <div class="flt-def-window">
+                To szklany negatyw zawierający obraz fotograficzny
+                poszczególnych warstw (obszarów domieszkowanych, metalizacji,
+                itp). Do zrealizowania pełnego cyklu wytwarzania układu
+                scalonego jest konieczny komplet fotomasek.
+                <img class="flt-image" src="images/flt-2.png" alt="" /></div
+            ></span>
+            W procesie
+            <span class="flt-def"
+              >dyfuzji
+              <div class="flt-def-window">
+                To samorzutne wyrównywanie stężeń składników w układzie
+                wieloskładnikowym, powodowane bezładnym ruchem cieplnym cząstek
+                (jonów, atomów). Powoduje m.in. mieszanie się stykających się z
+                sobą różnych gazów, cieczy, ciał stałych.
+              </div></span
+            >.
+          </div>`,
+  `<h3>Etap II - Fotolitografia</h3>
+          <div class="flt-animation-2">
+            <div class="flt-2images">
+              <img
+                id="flt-img2-1"
+                class="flt-img-2-visible flt-img-2 flt-image"
+                src="images/flt-14.png"
+                alt=""
+              />
+              <img
+                id="flt-img2-2"
+                class="flt-img-2 flt-image"
+                src="images/flt-15.png"
+                alt=""
+              />
+            </div>
+            <i
+              id="flt-play-3"
+              class="flt-play flt-button fa-regular fa-circle-play"
+              ><span class="flt-tip">Odtwórz</span></i
+            >
+          </div>
+          <div class="flt-text">
+            Obróbka litograficzna - zwykle litografia optyczna, czyli
+            <span class="flt-def"
+              >fotolitografia
+              <div class="flt-def-window">
+                Polega na wielokrotnym nakładaniu na powstającą strukturę
+                krzemową światłoczułych masek, które po naświetleniu i
+                potraktowaniu odpowiednim roztworem odsłaniają jedynie wybrane
+                powierzchnie krzemu dla kolejnych procesów. Naświetlanie
+                przypomina w pewnym stopniu wyświetlanie slajdów na ekranie,
+                rolę slajdu pełni maska wzorcowa - podstawowa różnica polega na
+                tym, że naświetlany obraz jest pomniejszoną, a nie powiększoną
+                wersją oryginału.
+              </div></span
+            >. Po tym procesie w warstwie SiO<sub>2</sub> uzyskuje się
+            <span class="flt-def"
+              >okna
+              <div class="flt-def-window">
+                Wytrawiona przestrzeń w warstwie SiO<sub>2</sub>,
+                Si<sub>3</sub>N<sub>4</sub>, Al, krzemu polikrystalicznego itp.
+                odsłaniająca wybrane obszary płytki podłożowej.
+              </div></span
+            >
+            odsłaniające powierzchnię krzemu w miejscach, w których ma być
+            wykonane
+            <span class="flt-def"
+              >domieszkowanie
+              <div class="flt-def-window">
+                Ideę domieszkowania lokalnego, zwanego również selektywnym
+                ilustruje poniższy rysunek na przykładzie dyfuzji lokalnej boru
+                do podłoża krzemowego typu n. Płytka krzemowa jest pokryta
+                warstwą SiO<sub>2</sub>, w której wykonano otwór. Warstwa
+                dwutlenku krzemu stanowi skuteczną barierę uniemożliwiającą
+                przenikanie domieszek do pokrytej tą warstwą powierzchni
+                półprzewodnika, gdyż współczynnik dyfuzji domieszek SiO<sub
+                  >2</sub
+                >
+                jest ok. 20-krotnie mniejszy niż Si.
+                <img class="flt-image" src="images/flt-8.png" alt="" />
+                Warstwa SiO<sub>2</sub> spełnia więc funkcję maski
+                nieprzepuszczającej atomów domieszki. W związku z tym krzem jest
+                domieszkowany tylko w obszarze okna. W procesie dyfuzji lokalnej
+                funkcję maski może spełniać
+                <strong>warstwa Si<sub>3</sub>N<sub>4</sub></strong
+                >.
+              </div></span
+            >.
+          </div>`,
+  `<h3>Etap III - dyfuzja</h3>
+          <div class="flt-animation-2">
+            <div class="flt-2images">
+              <img
+                id="flt-img2-1"
+                class="flt-img-2-visible flt-img-2 flt-image"
+                src="images/flt-16.png"
+                alt=""
+              />
+              <img
+                id="flt-img2-2"
+                class="flt-img-2 flt-image"
+                src="images/flt-17.png"
+                alt=""
+              />
+            </div>
+            <i
+              id="flt-play-3"
+              class="flt-play flt-button fa-regular fa-circle-play"
+              ><span class="flt-tip">Odtwórz</span></i
+            >
+          </div>
+          <div class="flt-text">
+            Następnie płytka jest poddawana procesowi
+            <span class="flt-def"
+              >dyfuzji
+              <div class="flt-def-window">
+                To samorzutne wyrównywanie stężeń składników w układzie
+                wieloskładnikowym, powodowane bezładnym ruchem cieplnym cząstek
+                (jonów, atomów). Powoduje m.in. mieszanie się stykających się z
+                sobą różnych gazów, cieczy, ciał stałych.
+              </div></span
+            >, przy czym atomy domieszki (w naszym przypadku
+            <strong>boru</strong>) wnikają do krzemu tylko w miejscach
+            niezamaskowanych warstwą SiO<sub>2</sub>. W ten sposób otrzymuje się
+            warstwe <i>typu p (lub n)</i> o precyzyjnie określonych kształtach.
+          </div>`,
+  `<h3>Etap V - kilkakrotne powtórzenie wszystkich etapów</h3>
+          <img class="flt-image" src="images/flt-18.png" alt="" />
+          <div class="flt-text">
+            Kilkakrotne powtórzenie tej sekwencji procesów, przy różnych
+            kształtach warstw odwzorowywanych w procesie
+            <strong>fotolitografii</strong>, umożliwia otrzymanie struktur
+            wielowarstwowych, spełniających funkcje różnych elementów, o
+            wymaganych kształtach i określonej lokalizacji w
+            <i>płytce podłożowej</i>. Powyżej przedstawiono schemat gotowej
+            struktury
+            <span class="flt-def"
+              >diody Schottky'ego
+              <div class="flt-def-window">
+                Charakteryzuje się znikomo małym czasem przełączania (mniej niż
+                <strong>1 ns</strong>) i małym spadkiem napięcia przy pracy w
+                kierunku przewodzenia (ok. 0,4V). Baterię Schottky'ego uzyskuje
+                się na styku aluminium z niezbyt silnie domieszkowanym krzemem
+                typu n (na styku aluminium z silnie domieszkowanym krzemem typu
+                n<sub>+</sub> powstaje kontakt omowy).
+              </div></span
+            >.
+          </div>`,
   //3
   `<div class="flt-title-slide flt-section">
             <h2>Domieszkowanie lokalne</h2>
@@ -466,7 +649,7 @@ const slides = [
   `<h2>Metoda konkurencyjna dla fotolitografii</h2>
           <img class="flt-image" src="images/flt-11.png" width="100px" alt="" />
           <div class="flt-text">
-            W dzisiejszych czasach do produkcji procesorów wykorzystuje się
+            W dzisiejszych czasach do produkcji <strong>procesorów</strong> wykorzystuje się
             proces <strong>rentgenolitografii</strong>. Odmiana ta polega na
             użyciu fal o długości od 0,4 do 1 nm, czyli promieni rentgenowskich.
             Jako podłoża masek do rentgenolitografii stosowane są cienkie
@@ -483,11 +666,11 @@ const slides = [
 ];
 const sections = [
   "Fotolitografia",
-  "Technologie planarne",
+  "Technologia planarna",
   "Domieszkowanie lokalne",
   "Nowinki techniczne",
 ];
-const sectionNums = [0, 8, 15, 17];
+const sectionNums = [0, 8, 14, 16];
 
 ////SLIDER
 //Buttons

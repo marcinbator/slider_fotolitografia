@@ -104,7 +104,9 @@ ol.flt-table {
   margin-bottom: 50px;
 }
 .flt-table-elem {
-  margin: 0 30px;
+  margin: 3px 30px;
+  position: relative;
+  left: 20px;
 }
 .flt-menu-active {
   color: rgb(38, 111, 219);
@@ -294,6 +296,9 @@ ol .flt-button {
 }
 #flt-play-3 .flt-tip {
   left: 50%;
+}
+.flt-t-sec {
+  left: 0;
 }
 @media (max-width: 1000px) {
   .flt-text {
