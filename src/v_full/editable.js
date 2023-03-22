@@ -2,6 +2,17 @@
 //Tytuł prezentacji
 const title = "Fotolitografia i technologie planarne";
 
+//Nazwy sekcji
+const sections = [
+  "Fotolitografia",
+  "Technologia planarna",
+  "Domieszkowanie lokalne",
+  "Nowinki techniczne",
+];
+
+//Numery slajdów od których zaczyna się dana sekcja
+const sectionNums = [0, 8, 14, 16];
+
 //Tablica z kodem slajdów
 const slides = [
   //1
@@ -20,7 +31,7 @@ const slides = [
     <img class="flt-image" src="images/flt-1.png" alt="" />
     <div class="flt-text">
       <span class="flt-def"
-        >Fotolitografia
+        >FotolitografiaS
         <div class="flt-def-window">
           Polega na wielokrotnym nakładaniu na powstającą strukturę
           krzemową światłoczułych masek, które po naświetleniu i
@@ -664,14 +675,3 @@ const slides = [
             <h2>Dziękuję za uwagę</h2>
           </div>`,
 ];
-
-//Nazwy sekcji
-const sections = [
-  "Fotolitografia",
-  "Technologia planarna",
-  "Domieszkowanie lokalne",
-  "Nowinki techniczne",
-];
-
-//Numery slajdów od których zaczyna się dana sekcja
-const sectionNums = [0, 8, 14, 16];
