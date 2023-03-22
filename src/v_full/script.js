@@ -49,9 +49,8 @@ function fltCheckSections() {
   for (var i = 0; i < sectionNums.length; i++) {
     var a = i + 1;
     if (
-      (currentSlide >= sectionNums[i] - 1 &&
-        currentSlide < sectionNums[a] - 1) ||
-      currentSlide >= sectionNums[sectionNums.length - 1] - 1
+      (currentSlide >= sectionNums[i] && currentSlide < sectionNums[a]) ||
+      currentSlide >= sectionNums[sectionNums.length - 1]
     ) {
       document
         .getElementById("flt-menu-" + currentSection)

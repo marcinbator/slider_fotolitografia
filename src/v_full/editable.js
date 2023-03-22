@@ -674,4 +674,4 @@ const sections = [
 ];
 
 //Numery slajdów od których zaczyna się dana sekcja
-const sectionNums = [1, 9, 15, 17];
+const sectionNums = [0, 8, 14, 16];

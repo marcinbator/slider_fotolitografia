@@ -64,7 +64,7 @@
   text-align: center;
 }
 .flt-slide {
-  height: 70vh;
+  min-height: 70vh;
   width: 70vw;
   border: 1px solid black;
   margin: 10px;
@@ -164,7 +164,7 @@ ol.flt-table {
     display: none;
   }
   .flt-slide {
-    height: 60vh;
+    min-height: 60vh;
     width: 90vw;
   }
   .flt-title {
@@ -233,6 +233,17 @@ ol.flt-table {
   margin-top: 80px;
   max-width: 50%;
 }
+.flt-animation-2 {
+  min-height: 40%;
+  margin-top: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.flt-slide-container:fullscreen .flt-animation-2 {
+  margin-top: 10%;
+}
 span.flt-button {
   font-size: medium !important;
 }
@@ -286,6 +297,7 @@ ol .flt-button {
   align-items: center;
   justify-content: center;
   min-height: 70%;
+  width: 100%;
 }
 .flt-img-2 {
   position: absolute;
@@ -296,9 +308,6 @@ ol .flt-button {
 }
 .flt-img-2-visible {
   opacity: 1;
-}
-.flt-animation-2 {
-  min-height: 40%;
 }
 #flt-play-3 {
   width: 100%;
@@ -316,7 +325,6 @@ ol .flt-button {
   }
   .flt-img-2 {
     max-width: 80%;
-    left: 10%;
   }
   .flt-section h2 {
     font-size: x-large;
