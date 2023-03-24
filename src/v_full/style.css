@@ -168,7 +168,7 @@ ol.flt-table {
     width: 90vw;
   }
   .flt-title {
-    font-size: large;
+    font-size: medium;
   }
   .flt-body i,
   .flt-body h3,
@@ -180,6 +180,9 @@ ol.flt-table {
   }
   .flt-button:hover .flt-tip {
     visibility: hidden;
+  }
+  .flt-subtitle {
+    font-size: x-small;
   }
 }
 
@@ -320,13 +323,23 @@ ol .flt-button {
 }
 @media (max-width: 1000px) {
   .flt-text {
-    font-size: large;
+    font-size: medium;
     text-align: left;
+    margin: 30px 10px;
   }
   .flt-img-2 {
     max-width: 80%;
   }
   .flt-section h2 {
     font-size: x-large;
+  }
+  .flt-slide h2 {
+    font-size: medium !important;
+  }
+  .flt-table-elem {
+    font-size: small !important;
+  }
+  .flt-title-slide {
+    font-size: medium;
   }
 }

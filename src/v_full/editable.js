@@ -22,6 +22,7 @@ const slides = [
               Wykonał Marcin Bator
               <h5>na podstawie prezentacji Waldemara Obirka</h5>
             </h4>
+            <h4>Opiekun: dr inż. Mariusz Mączka</h4>
           </div>`,
   `<div class="flt-title-slide flt-section">
             <h2>Fotolitografia</h2>
@@ -31,7 +32,7 @@ const slides = [
     <img class="flt-image" src="images/flt-1.png" alt="" />
     <div class="flt-text">
       <span class="flt-def"
-        >FotolitografiaS
+        >Fotolitografia
         <div class="flt-def-window">
           Polega na wielokrotnym nakładaniu na powstającą strukturę
           krzemową światłoczułych masek, które po naświetleniu i
