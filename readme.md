@@ -1,6 +1,8 @@
 # Projekt "Prezentacje multimedialne elektroniki – fotolitografia i technologia planarna"
 ## Marcin Bator 173592 1EF-DI, Politechnika Rzeszowska
 
+> Wersja demonstracyjna projektu: https://fotolitografia.marcinbator.repl.co/
+
 Projekt zakłada wykonanie prezentacji obejmującej zagadnienia fotolitografii
 i technologii planarnej. Prezentacja jest wzbogacona o elementy interaktywne,
 dzięki czemu lepiej zobrazuje zjawiska, których działanie będzie miała za
