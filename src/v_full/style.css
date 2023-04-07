@@ -73,6 +73,7 @@
   justify-content: space-around;
   flex-direction: column;
   overflow-y: auto;
+  position: relative;
 }
 .flt-slide h3 {
   justify-self: flex-start;
@@ -190,11 +191,14 @@ ol.flt-table {
 .flt-def-window {
   display: none;
   position: relative;
-  left: 10px;
+  left: 0;
+  top: 0;
   border: 1px solid lightgrey;
-  padding: 10px;
+  padding: 30px;
   margin: 10px 0;
   color: grey;
+  max-height: 50%;
+  overflow-y: auto;
 }
 .flt-def {
   color: rgb(38, 111, 219);
@@ -212,6 +216,11 @@ ol.flt-table {
   text-align: left;
   font-size: x-large;
   margin: 30px 50px;
+}
+.flt-abs-block {
+  position: absolute;
+  display: block;
+  background-color: white;
 }
 .flt-slide h3 {
   font-size: x-large;

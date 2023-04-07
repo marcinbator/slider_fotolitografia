@@ -119,7 +119,7 @@ var defElems = document.querySelectorAll("flt-def-window");
 //Listeners
 defButtons.forEach(function (elem) {
   elem.addEventListener("click", function () {
-    elem.querySelector(".flt-def-window").classList.toggle("flt-block");
+    elem.querySelector(".flt-def-window").classList.toggle("flt-abs-block");
   });
 });
 play1?.addEventListener("click", function () {
@@ -175,7 +175,7 @@ function fltLoadSlide() {
   play3 = document.getElementById("flt-play-3");
   defButtons.forEach(function (elem) {
     elem.addEventListener("click", function () {
-      elem.querySelector(".flt-def-window").classList.toggle("flt-block");
+      elem.querySelector(".flt-def-window").classList.toggle("flt-abs-block");
     });
   });
   play1?.addEventListener("click", function () {

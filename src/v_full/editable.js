@@ -6,12 +6,11 @@ const title = "Fotolitografia i technologie planarne";
 const sections = [
   "Fotolitografia",
   "Technologia planarna",
-  "Domieszkowanie lokalne",
   "Nowinki techniczne",
 ];
 
 //Numery slajdów od których zaczyna się dana sekcja
-const sectionNums = [0, 8, 14, 16];
+const sectionNums = [0, 8, 15];
 
 //Tablica z kodem slajdów
 const slides = [
@@ -527,33 +526,7 @@ const slides = [
             niezamaskowanych warstwą SiO<sub>2</sub>. W ten sposób otrzymuje się
             warstwe <i>typu p (lub n)</i> o precyzyjnie określonych kształtach.
           </div>`,
-  `<h3>Etap V - kilkakrotne powtórzenie wszystkich etapów</h3>
-          <img class="flt-image" src="images/flt-18.png" alt="" />
-          <div class="flt-text">
-            Kilkakrotne powtórzenie tej sekwencji procesów, przy różnych
-            kształtach warstw odwzorowywanych w procesie
-            <strong>fotolitografii</strong>, umożliwia otrzymanie struktur
-            wielowarstwowych, spełniających funkcje różnych elementów, o
-            wymaganych kształtach i określonej lokalizacji w
-            <i>płytce podłożowej</i>. Powyżej przedstawiono schemat gotowej
-            struktury
-            <span class="flt-def"
-              >diody Schottky'ego
-              <div class="flt-def-window">
-                Charakteryzuje się znikomo małym czasem przełączania (mniej niż
-                <strong>1 ns</strong>) i małym spadkiem napięcia przy pracy w
-                kierunku przewodzenia (ok. 0,4V). Baterię Schottky'ego uzyskuje
-                się na styku aluminium z niezbyt silnie domieszkowanym krzemem
-                typu n (na styku aluminium z silnie domieszkowanym krzemem typu
-                n<sub>+</sub> powstaje kontakt omowy).
-              </div></span
-            >.
-          </div>`,
-  //3
-  `<div class="flt-title-slide flt-section">
-            <h2>Domieszkowanie lokalne</h2>
-          </div>`,
-  `<h3>Domieszkowanie lokalne</h3>
+  `<h3>Etap IV - domieszkowanie lokalne</h3>
           <div class="flt-text">
             Ideę domieszkowania lokalnego, zwanego również selektywnym ilustruje
             poniższy rysunek na przykładzie dyfuzji lokalnej boru do podłoża
@@ -588,6 +561,28 @@ const slides = [
             >. W procesie dyfuzji lokalnej
             funkcję maski może spełniać
             <strong>warstwa Si<sub>3</sub>N<sub>4</sub></strong
+            >.
+          </div>`,
+  `<h3>Etap V - kilkakrotne powtórzenie wszystkich etapów</h3>
+  <img class="flt-image" src="images/flt-18.png" style="max-height: 30vh; width: auto" />
+          <div class="flt-text">
+            Kilkakrotne powtórzenie tej sekwencji procesów, przy różnych
+            kształtach warstw odwzorowywanych w procesie
+            <strong>fotolitografii</strong>, umożliwia otrzymanie struktur
+            wielowarstwowych, spełniających funkcje różnych elementów, o
+            wymaganych kształtach i określonej lokalizacji w
+            <i>płytce podłożowej</i>. Powyżej przedstawiono schemat gotowej
+            struktury
+            <span class="flt-def"
+              >diody Schottky'ego
+              <div class="flt-def-window">
+                Charakteryzuje się znikomo małym czasem przełączania (mniej niż
+                <strong>1 ns</strong>) i małym spadkiem napięcia przy pracy w
+                kierunku przewodzenia (ok. 0,4V). Baterię Schottky'ego uzyskuje
+                się na styku aluminium z niezbyt silnie domieszkowanym krzemem
+                typu n (na styku aluminium z silnie domieszkowanym krzemem typu
+                n<sub>+</sub> powstaje kontakt omowy).
+              </div></span
             >.
           </div>`,
   //4
@@ -671,6 +666,15 @@ const slides = [
             rentgenowskich o długości fali około 800 razy krótszej od fal
             stosowanych w klasycznej fotoligrafii jest uzyskanie większej
             rozdzielczości.
+          </div>`,
+  `<h2>Najnowsze mikroprocesory</h2>
+          <img class="flt-image" src="images/flt-19.png" width="100px" alt="" />
+          <div class="flt-text">
+            Mistrzem świata na nanometrze kwadratowym jest holenderska firma ASML. ASML 
+            produkuje maszyny fotolitograficzne o największej gęstości tranzystorów i połączeń na "waflu krzemowym".
+             Dziesiątki miliardów tranzystorów, <strong>200 razy mniejszych niż czerwona krwinka.</strong> Dzięki ASML najnowsze procesory wykonywane 
+             są w 7-nanomentrowym procesie technologicznym, czyli minimalnej odległości między tranzystorami i połączeniami. 
+             Dla porównania ludzki włos ma grubość 80 tys. nanometrów. Nikon i Canon budują podobne maszyny, ale w 14-nanomentrowym procesie technologicznym.
           </div>`,
   `<div class="flt-title-slide flt-section">
             <h2>Dziękuję za uwagę</h2>
