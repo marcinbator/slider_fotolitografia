@@ -10,7 +10,7 @@ const sections = [
 ];
 
 //Numery slajdów od których zaczyna się dana sekcja
-const sectionNums = [0, 8, 15];
+const sectionNums = [0, 3, 6];
 
 //Tablica z kodem slajdów
 const slides = [
@@ -26,37 +26,158 @@ const slides = [
   `<div class="flt-title-slide flt-section">
             <h2>Fotolitografia</h2>
           </div>`,
+  `<div id="flt-slide-content" class="flt-slide-content"></div>
+          <input
+            id="flt-anim-slider"
+            class="flt-range"
+            type="range"
+            min="1"
+            max="599"
+            value="1"
+          />
+    `,
+  //2
+  `<div class="flt-title-slide flt-section">
+            <h2>Technologia planarna</h2>
+          </div>`,
+  `<div id="flt-slide-content" class="flt-slide-content"></div>
+          <input
+            id="flt-anim-slider"
+            class="flt-range"
+            type="range"
+            min="1"
+            max="599"
+            value="1"
+          />`,
+  //3
+  `<div class="flt-title-slide flt-section">
+            <h2>Nowinki techniczne</h2>
+          </div>`,
+  `<h2>Nowinki techniczne</h2>
+          <img class="flt-image" src="images/flt-10.png" alt="" />
+          <div class="flt-text">
+            Będąca siłą napędową mikroelektroniki potrzeba upakowania wewnątrz
+            układu scalonego coraz większej liczby
+            <span class="flt-def"
+              >tranzystorów
+              <div class="flt-def-window">
+                Przyrząd półprzewodnikowy trójelektrodowy, umożliwiający
+                wzmacnianie mocy sygnałów elektrycznych. Stanowi element czynny
+                układów elektronicznych. Pełni funkcję wzmacniacza,
+                przełącznika, detektora itp. Tranzystory dzieli się na:
+                bipolarne i unipolarne (polowe).
+              </div></span
+            >
+            zmusza producentów do sięgania po technologie o coraz mniejszym
+            wymiarze charakterystycznym. To z kolei wymusza stosowanie w
+            wykorzystywanym do produkcji układów procesie
+            <span class="flt-def"
+              >fotolitograficznym
+              <div class="flt-def-window">
+                Polega na wielokrotnym nakładaniu na powstającą strukturę
+                krzemową światłoczułych masek, które po naświetleniu i
+                potraktowaniu odpowiednim roztworem odsłaniają jedynie wybrane
+                powierzchnie krzemu dla kolejnych procesów. Naświetlanie
+                przypomina w pewnym stopniu wyświetlanie slajdów na ekranie,
+                rolę slajdu pełni maska wzorcowa - podstawowa różnica polega na
+                tym, że naświetlany obraz jest pomniejszoną, a nie powiększoną
+                wersją oryginału.
+              </div></span
+            >
+            światła o coraz mniejszej długości fali. Obecnie stosowane procesy
+            nie używają już światła widzialnego, a
+            <span class="flt-def"
+              >promieniowania nadfioletowego
+              <div class="flt-def-window">
+                Jest to promieniowanie elektromagnetyczne o fali długości 10-400
+                nm, nie wywołujące wrażeń wzrokowych u człowieka; obszar
+                promieniowania nadfioletowego dzieli się umownie na 4 części:
+                zakres A o długości fali 315-400 nm, zakres B 280-315 nm, zakres
+                C 200-280 nm i nadfiolet próżniowy 10-200 nm, lub też dzieli się
+                na nadfiolet bliski (200-400 nm) i nadfiolet daleki, próżniowy
+                (10-200 nm), który swoją nazwę zawdzięcza temu, że można go
+                badać tylko w próżni, gdyż fale o odpowiadających mu długościach
+                są bardzo silnie pochłaniane przez powietrze. Do detekcji
+                promieniowania nadfioletowego wykorzystuje się: fotoogniwa,
+                fotopowielacze, przetworniki promieniowania.
+                <br />
+                <br />
+                Najsilniejszym naturalnym źródłem promieniowania nadfioletowego
+                jest Słońce, zaś najbardziej rozpowszechnionymi sztucznymi
+                źródłami promieniowania nadfioletowego są lampy wyładowcze
+                (głównie rtęciowe). Dzięki swoim właściwościom promieniowanie
+                nadfioletowe jest wykorzystywane m.in. w technice oświetleniowej
+                (świetlówki), analizie luminescencyjnej, badaniach
+                nieniszczących, do sterylizacji pomieszczeń, w biologii w
+                badaniach mikroskopowych tkanek i komórek, w kryminalistyce,
+                muzealnictwie, w przemyśle do przyspieszania procesów
+                polimeryzacji tworzyw sztucznych. Promieniowanie nadfioletowe
+                odkryli 1801 J. Ritter i W.H. Wollaston.
+              </div></span
+            >. Przy długości fali ok. <strong>248 nanometrów</strong> możliwe
+            jest uzyskanie wymiaru charakterystycznego rzędu 150-120 nanometrów.
+          </div>`,
+  `<h2>Metoda konkurencyjna dla fotolitografii</h2>
+          <img class="flt-image" src="images/flt-11.png" width="100px" alt="" />
+          <div class="flt-text">
+            W dzisiejszych czasach do produkcji <strong>procesorów</strong> wykorzystuje się
+            proces <strong>rentgenolitografii</strong>. Odmiana ta polega na
+            użyciu fal o długości od 0,4 do 1 nm, czyli promieni rentgenowskich.
+            Jako podłoża masek do rentgenolitografii stosowane są cienkie
+            membrany krzemowe oraz takie materiały jak tytan, SiC, mylar,
+            poliamidy czy inne, natomiast jako materiał pochłaniający
+            promieniowanie - złoto. Podstawową zaletą zastosowania promieni
+            rentgenowskich o długości fali około 800 razy krótszej od fal
+            stosowanych w klasycznej fotoligrafii jest uzyskanie większej
+            rozdzielczości.
+          </div>`,
+  `<h2>Najnowsze mikroprocesory</h2>
+          <img class="flt-image" src="images/flt-19.png" width="100px" alt="" />
+          <div class="flt-text">
+            Mistrzem świata na nanometrze kwadratowym jest holenderska firma ASML. ASML 
+            produkuje maszyny fotolitograficzne o największej gęstości tranzystorów i połączeń na "waflu krzemowym".
+             Dziesiątki miliardów tranzystorów, <strong>200 razy mniejszych niż czerwona krwinka.</strong> Dzięki ASML najnowsze procesory wykonywane 
+             są w 7-nanomentrowym procesie technologicznym, czyli minimalnej odległości między tranzystorami i połączeniami. 
+             Dla porównania ludzki włos ma grubość 80 tys. nanometrów. Nikon i Canon budują podobne maszyny, ale w 14-nanomentrowym procesie technologicznym.
+          </div>`,
+  `<div class="flt-title-slide flt-section">
+            <h2>Dziękuję za uwagę</h2>
+          </div>`,
+];
+const slideElems1 = [
   `<h2>Podstawowe fazy fotolitografii</h2>
     <h3>Etap I</h3>
-    <img class="flt-image" src="images/flt-1.png" alt="" />
-    <div class="flt-text">
-      <span class="flt-def"
-        >Fotolitografia
-        <div class="flt-def-window">
-          Polega na wielokrotnym nakładaniu na powstającą strukturę
-          krzemową światłoczułych masek, które po naświetleniu i
-          potraktowaniu odpowiednim roztworem odsłaniają jedynie wybrane
-          powierzchnie krzemu dla kolejnych procesów. Naświetlanie
-          przypomina w pewnym stopniu wyświetlanie slajdów na ekranie,
-          rolę slajdu pełni maska wzorcowa - podstawowa różnica polega na
-          tym, że naświetlany obraz jest pomniejszoną, a nie powiększoną
-          wersją oryginału.
-        </div></span
-      >
-      polega na zastosowaniu emulsji światłoczułej (tzw.
-      <strong>fotorezystu</strong>) do maskowania i lokalnego wytrawiania
-      odsłoniętych warstw SiO<sub>2</sub>, Si<sub>3</sub>N<sub>4</sub>,
-      Al, krzemu polikrystalicznego itp. Proces fotolitografii pokazany
-      jest tu na przykładzie ważniejszych faz procesu wytwarzania
-      <span class="flt-def"
-        >okien
-        <div class="flt-def-window">
-          Wytrawiona przestrzeń w warstwie SiO<sub>2</sub>,
-          Si<sub>3</sub>N<sub>4</sub>, Al, krzemu polikrystalicznego itp.
-          odsłaniająca wybrane obszary płytki podłożowej.
-        </div></span
-      >
-      w warstwie SiO<sub>2</sub>.
+    <div class="flt-animation1">
+      <img class="flt-image" src="images/flt-1.png" alt="" />
+      <div class="flt-text">
+        <span class="flt-def"
+          >Fotolitografia
+          <div class="flt-def-window">
+            Polega na wielokrotnym nakładaniu na powstającą strukturę
+            krzemową światłoczułych masek, które po naświetleniu i
+            potraktowaniu odpowiednim roztworem odsłaniają jedynie wybrane
+            powierzchnie krzemu dla kolejnych procesów. Naświetlanie
+            przypomina w pewnym stopniu wyświetlanie slajdów na ekranie,
+            rolę slajdu pełni maska wzorcowa - podstawowa różnica polega na
+            tym, że naświetlany obraz jest pomniejszoną, a nie powiększoną
+            wersją oryginału.
+          </div></span
+        >
+        polega na zastosowaniu emulsji światłoczułej (tzw.
+        <strong>fotorezystu</strong>) do maskowania i lokalnego wytrawiania
+        odsłoniętych warstw SiO<sub>2</sub>, Si<sub>3</sub>N<sub>4</sub>,
+        Al, krzemu polikrystalicznego itp. Proces fotolitografii pokazany
+        jest tu na przykładzie ważniejszych faz procesu wytwarzania
+        <span class="flt-def"
+          >okien
+          <div class="flt-def-window">
+            Wytrawiona przestrzeń w warstwie SiO<sub>2</sub>,
+            Si<sub>3</sub>N<sub>4</sub>, Al, krzemu polikrystalicznego itp.
+            odsłaniająca wybrane obszary płytki podłożowej.
+          </div></span
+        >
+        w warstwie SiO<sub>2</sub>.
+      </div>
     </div>
     `,
   `
@@ -317,10 +438,8 @@ const slides = [
             >
             .
           </div>`,
-  //2
-  `<div class="flt-title-slide flt-section">
-            <h2>Technologia planarna</h2>
-          </div>`,
+];
+const slideElems2 = [
   `<h2>Technologia planarna</h2>
           <img class="flt-image" src="images/flt-9.png" alt="" />
           <div class="flt-text">
@@ -584,99 +703,5 @@ const slides = [
                 n<sub>+</sub> powstaje kontakt omowy).
               </div></span
             >.
-          </div>`,
-  //4
-  `<div class="flt-title-slide flt-section">
-            <h2>Nowinki techniczne</h2>
-          </div>`,
-  `<h2>Nowinki techniczne</h2>
-          <img class="flt-image" src="images/flt-10.png" alt="" />
-          <div class="flt-text">
-            Będąca siłą napędową mikroelektroniki potrzeba upakowania wewnątrz
-            układu scalonego coraz większej liczby
-            <span class="flt-def"
-              >tranzystorów
-              <div class="flt-def-window">
-                Przyrząd półprzewodnikowy trójelektrodowy, umożliwiający
-                wzmacnianie mocy sygnałów elektrycznych. Stanowi element czynny
-                układów elektronicznych. Pełni funkcję wzmacniacza,
-                przełącznika, detektora itp. Tranzystory dzieli się na:
-                bipolarne i unipolarne (polowe).
-              </div></span
-            >
-            zmusza producentów do sięgania po technologie o coraz mniejszym
-            wymiarze charakterystycznym. To z kolei wymusza stosowanie w
-            wykorzystywanym do produkcji układów procesie
-            <span class="flt-def"
-              >fotolitograficznym
-              <div class="flt-def-window">
-                Polega na wielokrotnym nakładaniu na powstającą strukturę
-                krzemową światłoczułych masek, które po naświetleniu i
-                potraktowaniu odpowiednim roztworem odsłaniają jedynie wybrane
-                powierzchnie krzemu dla kolejnych procesów. Naświetlanie
-                przypomina w pewnym stopniu wyświetlanie slajdów na ekranie,
-                rolę slajdu pełni maska wzorcowa - podstawowa różnica polega na
-                tym, że naświetlany obraz jest pomniejszoną, a nie powiększoną
-                wersją oryginału.
-              </div></span
-            >
-            światła o coraz mniejszej długości fali. Obecnie stosowane procesy
-            nie używają już światła widzialnego, a
-            <span class="flt-def"
-              >promieniowania nadfioletowego
-              <div class="flt-def-window">
-                Jest to promieniowanie elektromagnetyczne o fali długości 10-400
-                nm, nie wywołujące wrażeń wzrokowych u człowieka; obszar
-                promieniowania nadfioletowego dzieli się umownie na 4 części:
-                zakres A o długości fali 315-400 nm, zakres B 280-315 nm, zakres
-                C 200-280 nm i nadfiolet próżniowy 10-200 nm, lub też dzieli się
-                na nadfiolet bliski (200-400 nm) i nadfiolet daleki, próżniowy
-                (10-200 nm), który swoją nazwę zawdzięcza temu, że można go
-                badać tylko w próżni, gdyż fale o odpowiadających mu długościach
-                są bardzo silnie pochłaniane przez powietrze. Do detekcji
-                promieniowania nadfioletowego wykorzystuje się: fotoogniwa,
-                fotopowielacze, przetworniki promieniowania.
-                <br />
-                <br />
-                Najsilniejszym naturalnym źródłem promieniowania nadfioletowego
-                jest Słońce, zaś najbardziej rozpowszechnionymi sztucznymi
-                źródłami promieniowania nadfioletowego są lampy wyładowcze
-                (głównie rtęciowe). Dzięki swoim właściwościom promieniowanie
-                nadfioletowe jest wykorzystywane m.in. w technice oświetleniowej
-                (świetlówki), analizie luminescencyjnej, badaniach
-                nieniszczących, do sterylizacji pomieszczeń, w biologii w
-                badaniach mikroskopowych tkanek i komórek, w kryminalistyce,
-                muzealnictwie, w przemyśle do przyspieszania procesów
-                polimeryzacji tworzyw sztucznych. Promieniowanie nadfioletowe
-                odkryli 1801 J. Ritter i W.H. Wollaston.
-              </div></span
-            >. Przy długości fali ok. <strong>248 nanometrów</strong> możliwe
-            jest uzyskanie wymiaru charakterystycznego rzędu 150-120 nanometrów.
-          </div>`,
-  `<h2>Metoda konkurencyjna dla fotolitografii</h2>
-          <img class="flt-image" src="images/flt-11.png" width="100px" alt="" />
-          <div class="flt-text">
-            W dzisiejszych czasach do produkcji <strong>procesorów</strong> wykorzystuje się
-            proces <strong>rentgenolitografii</strong>. Odmiana ta polega na
-            użyciu fal o długości od 0,4 do 1 nm, czyli promieni rentgenowskich.
-            Jako podłoża masek do rentgenolitografii stosowane są cienkie
-            membrany krzemowe oraz takie materiały jak tytan, SiC, mylar,
-            poliamidy czy inne, natomiast jako materiał pochłaniający
-            promieniowanie - złoto. Podstawową zaletą zastosowania promieni
-            rentgenowskich o długości fali około 800 razy krótszej od fal
-            stosowanych w klasycznej fotoligrafii jest uzyskanie większej
-            rozdzielczości.
-          </div>`,
-  `<h2>Najnowsze mikroprocesory</h2>
-          <img class="flt-image" src="images/flt-19.png" width="100px" alt="" />
-          <div class="flt-text">
-            Mistrzem świata na nanometrze kwadratowym jest holenderska firma ASML. ASML 
-            produkuje maszyny fotolitograficzne o największej gęstości tranzystorów i połączeń na "waflu krzemowym".
-             Dziesiątki miliardów tranzystorów, <strong>200 razy mniejszych niż czerwona krwinka.</strong> Dzięki ASML najnowsze procesory wykonywane 
-             są w 7-nanomentrowym procesie technologicznym, czyli minimalnej odległości między tranzystorami i połączeniami. 
-             Dla porównania ludzki włos ma grubość 80 tys. nanometrów. Nikon i Canon budują podobne maszyny, ale w 14-nanomentrowym procesie technologicznym.
-          </div>`,
-  `<div class="flt-title-slide flt-section">
-            <h2>Dziękuję za uwagę</h2>
           </div>`,
 ];

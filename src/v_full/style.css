@@ -200,6 +200,14 @@ ol.flt-table {
   max-height: 50%;
   overflow-y: auto;
 }
+.flt-slide-content {
+}
+.flt-range {
+  position: absolute;
+  bottom: 10px;
+  left: 2%;
+  width: 95%;
+}
 .flt-def {
   color: rgb(38, 111, 219);
 }
