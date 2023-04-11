@@ -193,6 +193,9 @@ function fltAnimate(scrollValue) {
     fltChooseAnim();
     console.log("Loaded part listeners.");
   }
+  if (play3) {
+    fltSlideAnim3(scrollValue);
+  }
 }
 function fltSlideAnim1() {
   element = document.querySelector(".flt-anim-up");
@@ -216,7 +219,7 @@ function fltSlideAnim2() {
     }, 500);
   }, 500);
 }
-function fltSlideAnim3() {
+/*function fltSlideAnim3() {
   var img1 = document.getElementById("flt-img2-1");
   var img2 = document.getElementById("flt-img2-2");
   img2.classList.remove("flt-img-2-visible");
@@ -225,4 +228,13 @@ function fltSlideAnim3() {
     img1.classList.remove("flt-img-2-visible");
     img2.classList.add("flt-img-2-visible");
   }, 2000);
+}*/
+function fltSlideAnim3(scrollPosition) {
+  var img1 = document.getElementById("flt-img2-1");
+  var img2 = document.getElementById("flt-img2-2");
+  var opacity = (scrollPosition % 100) / 100;
+  var misOpacity = 1 - opacity;
+  img1.style.opacity = misOpacity;
+  img2.style.opacity = opacity;
+  console.log(img1.attributes);
 }

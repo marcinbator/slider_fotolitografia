@@ -200,13 +200,40 @@ ol.flt-table {
   max-height: 50%;
   overflow-y: auto;
 }
-.flt-slide-content {
-}
 .flt-range {
   position: absolute;
   bottom: 10px;
   left: 2%;
   width: 95%;
+}
+.flt-range {
+  -webkit-appearance: none;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.flt-range:hover {
+  opacity: 1;
+}
+
+.flt-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: rgb(38, 111, 219);
+  cursor: pointer;
+}
+
+.flt-range::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: rgb(38, 111, 219);
+  cursor: pointer;
 }
 .flt-def {
   color: rgb(38, 111, 219);
@@ -324,7 +351,6 @@ ol .flt-button {
   bottom: 0;
   left: 25%;
   opacity: 0;
-  transition: opacity 3s ease-in-out;
 }
 .flt-img-2-visible {
   opacity: 1;
