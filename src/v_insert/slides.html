@@ -1,9 +1,9 @@
 <span class="flt-subtitle"
-          >projekt i wykonanie szablonu:
-          <a target="'blank" href="https://github.com/heilmartinos"
-            >Marcin Bator</a
-          ></span
-        >
+  >projekt i wykonanie szablonu:
+  <a target="'blank" href="https://github.com/heilmartinos"
+    >Marcin Bator</a
+  ></span
+>
 <div class="flt-slide-container">
   <!--Menu górne-->
 
@@ -172,7 +172,7 @@
     text-align: center;
   }
   .flt-slide {
-    height: 70vh;
+    min-height: 70vh;
     width: 70vw;
     border: 1px solid black;
     margin: 10px;
@@ -181,6 +181,7 @@
     justify-content: space-around;
     flex-direction: column;
     overflow-y: auto;
+    position: relative;
   }
   .flt-slide h3 {
     justify-self: flex-start;
@@ -272,11 +273,11 @@
       display: none;
     }
     .flt-slide {
-      height: 60vh;
+      min-height: 60vh;
       width: 90vw;
     }
     .flt-title {
-      font-size: large;
+      font-size: medium;
     }
     .flt-body i,
     .flt-body h3,
@@ -289,17 +290,58 @@
     .flt-button:hover .flt-tip {
       visibility: hidden;
     }
+    .flt-subtitle {
+      font-size: x-small;
+    }
   }
 
   /*Content styles*/
   .flt-def-window {
     display: none;
     position: relative;
-    left: 10px;
+    left: 0;
+    top: 0;
     border: 1px solid lightgrey;
-    padding: 10px;
+    padding: 30px;
     margin: 10px 0;
     color: grey;
+    max-height: 50%;
+    overflow-y: auto;
+  }
+  .flt-range {
+    position: absolute;
+    bottom: 10px;
+    left: 2%;
+    width: 95%;
+  }
+  .flt-range {
+    -webkit-appearance: none;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+  }
+
+  .flt-range:hover {
+    opacity: 1;
+  }
+
+  .flt-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: rgb(38, 111, 219);
+    cursor: pointer;
+  }
+
+  .flt-range::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: rgb(38, 111, 219);
+    cursor: pointer;
   }
   .flt-def {
     color: rgb(38, 111, 219);
@@ -317,6 +359,11 @@
     text-align: left;
     font-size: x-large;
     margin: 30px 50px;
+  }
+  .flt-abs-block {
+    position: absolute;
+    display: block;
+    background-color: white;
   }
   .flt-slide h3 {
     font-size: x-large;
@@ -340,6 +387,17 @@
     min-height: 20%;
     margin-top: 80px;
     max-width: 50%;
+  }
+  .flt-animation-2 {
+    min-height: 40%;
+    margin-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .flt-slide-container:fullscreen .flt-animation-2 {
+    margin-top: 10%;
   }
   span.flt-button {
     font-size: medium !important;
@@ -394,22 +452,19 @@
     align-items: center;
     justify-content: center;
     min-height: 70%;
+    width: 100%;
   }
   .flt-img-2 {
     position: absolute;
     bottom: 0;
     left: 25%;
     opacity: 0;
-    transition: opacity 3s ease-in-out;
   }
   .flt-img-2-visible {
     opacity: 1;
   }
-  .flt-animation-2 {
-    min-height: 40%;
-  }
   #flt-play-3 {
-    width: 100%;
+    display: none;
   }
   #flt-play-3 .flt-tip {
     left: 50%;
@@ -419,15 +474,24 @@
   }
   @media (max-width: 1000px) {
     .flt-text {
-      font-size: large;
+      font-size: medium;
       text-align: left;
+      margin: 30px 10px;
     }
     .flt-img-2 {
       max-width: 80%;
-      left: 10%;
     }
     .flt-section h2 {
       font-size: x-large;
+    }
+    .flt-slide h2 {
+      font-size: medium !important;
+    }
+    .flt-table-elem {
+      font-size: small !important;
+    }
+    .flt-title-slide {
+      font-size: medium;
     }
   }
 </style>
@@ -440,6 +504,16 @@
   //Tytuł prezentacji
   const title = "Fotolitografia i technologie planarne";
 
+  //Nazwy sekcji
+  const sections = [
+    "Fotolitografia",
+    "Technologia planarna",
+    "Nowinki techniczne",
+  ];
+
+  //Numery slajdów od których zaczyna się dana sekcja
+  const sectionNums = [0, 3, 6];
+
   //Tablica z kodem slajdów
   const slides = [
     //1
@@ -449,41 +523,163 @@
               Wykonał Marcin Bator
               <h5>na podstawie prezentacji Waldemara Obirka</h5>
             </h4>
+            <h4>Opiekun: dr inż. Mariusz Mączka</h4>
           </div>`,
     `<div class="flt-title-slide flt-section">
             <h2>Fotolitografia</h2>
           </div>`,
+    `<div id="flt-slide-content" class="flt-slide-content"></div>
+          <input
+            id="flt-anim-slider"
+            class="flt-range"
+            type="range"
+            min="1"
+            max="599"
+            value="1"
+          />
+    `,
+    //2
+    `<div class="flt-title-slide flt-section">
+            <h2>Technologia planarna</h2>
+          </div>`,
+    `<div id="flt-slide-content" class="flt-slide-content"></div>
+          <input
+            id="flt-anim-slider"
+            class="flt-range"
+            type="range"
+            min="1"
+            max="599"
+            value="1"
+          />`,
+    //3
+    `<div class="flt-title-slide flt-section">
+            <h2>Nowinki techniczne</h2>
+          </div>`,
+    `<h2>Nowinki techniczne</h2>
+          <img class="flt-image" src="images/flt-10.png" alt="" />
+          <div class="flt-text">
+            Będąca siłą napędową mikroelektroniki potrzeba upakowania wewnątrz
+            układu scalonego coraz większej liczby
+            <span class="flt-def"
+              >tranzystorów
+              <div class="flt-def-window">
+                Przyrząd półprzewodnikowy trójelektrodowy, umożliwiający
+                wzmacnianie mocy sygnałów elektrycznych. Stanowi element czynny
+                układów elektronicznych. Pełni funkcję wzmacniacza,
+                przełącznika, detektora itp. Tranzystory dzieli się na:
+                bipolarne i unipolarne (polowe).
+              </div></span
+            >
+            zmusza producentów do sięgania po technologie o coraz mniejszym
+            wymiarze charakterystycznym. To z kolei wymusza stosowanie w
+            wykorzystywanym do produkcji układów procesie
+            <span class="flt-def"
+              >fotolitograficznym
+              <div class="flt-def-window">
+                Polega na wielokrotnym nakładaniu na powstającą strukturę
+                krzemową światłoczułych masek, które po naświetleniu i
+                potraktowaniu odpowiednim roztworem odsłaniają jedynie wybrane
+                powierzchnie krzemu dla kolejnych procesów. Naświetlanie
+                przypomina w pewnym stopniu wyświetlanie slajdów na ekranie,
+                rolę slajdu pełni maska wzorcowa - podstawowa różnica polega na
+                tym, że naświetlany obraz jest pomniejszoną, a nie powiększoną
+                wersją oryginału.
+              </div></span
+            >
+            światła o coraz mniejszej długości fali. Obecnie stosowane procesy
+            nie używają już światła widzialnego, a
+            <span class="flt-def"
+              >promieniowania nadfioletowego
+              <div class="flt-def-window">
+                Jest to promieniowanie elektromagnetyczne o fali długości 10-400
+                nm, nie wywołujące wrażeń wzrokowych u człowieka; obszar
+                promieniowania nadfioletowego dzieli się umownie na 4 części:
+                zakres A o długości fali 315-400 nm, zakres B 280-315 nm, zakres
+                C 200-280 nm i nadfiolet próżniowy 10-200 nm, lub też dzieli się
+                na nadfiolet bliski (200-400 nm) i nadfiolet daleki, próżniowy
+                (10-200 nm), który swoją nazwę zawdzięcza temu, że można go
+                badać tylko w próżni, gdyż fale o odpowiadających mu długościach
+                są bardzo silnie pochłaniane przez powietrze. Do detekcji
+                promieniowania nadfioletowego wykorzystuje się: fotoogniwa,
+                fotopowielacze, przetworniki promieniowania.
+                <br />
+                <br />
+                Najsilniejszym naturalnym źródłem promieniowania nadfioletowego
+                jest Słońce, zaś najbardziej rozpowszechnionymi sztucznymi
+                źródłami promieniowania nadfioletowego są lampy wyładowcze
+                (głównie rtęciowe). Dzięki swoim właściwościom promieniowanie
+                nadfioletowe jest wykorzystywane m.in. w technice oświetleniowej
+                (świetlówki), analizie luminescencyjnej, badaniach
+                nieniszczących, do sterylizacji pomieszczeń, w biologii w
+                badaniach mikroskopowych tkanek i komórek, w kryminalistyce,
+                muzealnictwie, w przemyśle do przyspieszania procesów
+                polimeryzacji tworzyw sztucznych. Promieniowanie nadfioletowe
+                odkryli 1801 J. Ritter i W.H. Wollaston.
+              </div></span
+            >. Przy długości fali ok. <strong>248 nanometrów</strong> możliwe
+            jest uzyskanie wymiaru charakterystycznego rzędu 150-120 nanometrów.
+          </div>`,
+    `<h2>Metoda konkurencyjna dla fotolitografii</h2>
+          <img class="flt-image" src="images/flt-11.png" width="100px" alt="" />
+          <div class="flt-text">
+            W dzisiejszych czasach do produkcji <strong>procesorów</strong> wykorzystuje się
+            proces <strong>rentgenolitografii</strong>. Odmiana ta polega na
+            użyciu fal o długości od 0,4 do 1 nm, czyli promieni rentgenowskich.
+            Jako podłoża masek do rentgenolitografii stosowane są cienkie
+            membrany krzemowe oraz takie materiały jak tytan, SiC, mylar,
+            poliamidy czy inne, natomiast jako materiał pochłaniający
+            promieniowanie - złoto. Podstawową zaletą zastosowania promieni
+            rentgenowskich o długości fali około 800 razy krótszej od fal
+            stosowanych w klasycznej fotoligrafii jest uzyskanie większej
+            rozdzielczości.
+          </div>`,
+    `<h2>Najnowsze mikroprocesory</h2>
+          <img class="flt-image" src="images/flt-19.png" width="100px" alt="" />
+          <div class="flt-text">
+            Mistrzem świata na nanometrze kwadratowym jest holenderska firma ASML. ASML 
+            produkuje maszyny fotolitograficzne o największej gęstości tranzystorów i połączeń na "waflu krzemowym".
+             Dziesiątki miliardów tranzystorów, <strong>200 razy mniejszych niż czerwona krwinka.</strong> Dzięki ASML najnowsze procesory wykonywane 
+             są w 7-nanomentrowym procesie technologicznym, czyli minimalnej odległości między tranzystorami i połączeniami. 
+             Dla porównania ludzki włos ma grubość 80 tys. nanometrów. Nikon i Canon budują podobne maszyny, ale w 14-nanomentrowym procesie technologicznym.
+          </div>`,
+    `<div class="flt-title-slide flt-section">
+            <h2>Dziękuję za uwagę</h2>
+          </div>`,
+  ];
+  const slideElems1 = [
     `<h2>Podstawowe fazy fotolitografii</h2>
     <h3>Etap I</h3>
-    <img class="flt-image" src="images/flt-1.png" alt="" />
-    <div class="flt-text">
-      <span class="flt-def"
-        >Fotolitografia
-        <div class="flt-def-window">
-          Polega na wielokrotnym nakładaniu na powstającą strukturę
-          krzemową światłoczułych masek, które po naświetleniu i
-          potraktowaniu odpowiednim roztworem odsłaniają jedynie wybrane
-          powierzchnie krzemu dla kolejnych procesów. Naświetlanie
-          przypomina w pewnym stopniu wyświetlanie slajdów na ekranie,
-          rolę slajdu pełni maska wzorcowa - podstawowa różnica polega na
-          tym, że naświetlany obraz jest pomniejszoną, a nie powiększoną
-          wersją oryginału.
-        </div></span
-      >
-      polega na zastosowaniu emulsji światłoczułej (tzw.
-      <strong>fotorezystu</strong>) do maskowania i lokalnego wytrawiania
-      odsłoniętych warstw SiO<sub>2</sub>, Si<sub>3</sub>N<sub>4</sub>,
-      Al, krzemu polikrystalicznego itp. Proces fotolitografii pokazany
-      jest tu na przykładzie ważniejszych faz procesu wytwarzania
-      <span class="flt-def"
-        >okien
-        <div class="flt-def-window">
-          Wytrawiona przestrzeń w warstwie SiO<sub>2</sub>,
-          Si<sub>3</sub>N<sub>4</sub>, Al, krzemu polikrystalicznego itp.
-          odsłaniająca wybrane obszary płytki podłożowej.
-        </div></span
-      >
-      w warstwie SiO<sub>2</sub>.
+    <div class="flt-animation1">
+      <img class="flt-image" src="images/flt-1.png" alt="" />
+      <div class="flt-text">
+        <span class="flt-def"
+          >Fotolitografia
+          <div class="flt-def-window">
+            Polega na wielokrotnym nakładaniu na powstającą strukturę
+            krzemową światłoczułych masek, które po naświetleniu i
+            potraktowaniu odpowiednim roztworem odsłaniają jedynie wybrane
+            powierzchnie krzemu dla kolejnych procesów. Naświetlanie
+            przypomina w pewnym stopniu wyświetlanie slajdów na ekranie,
+            rolę slajdu pełni maska wzorcowa - podstawowa różnica polega na
+            tym, że naświetlany obraz jest pomniejszoną, a nie powiększoną
+            wersją oryginału.
+          </div></span
+        >
+        polega na zastosowaniu emulsji światłoczułej (tzw.
+        <strong>fotorezystu</strong>) do maskowania i lokalnego wytrawiania
+        odsłoniętych warstw SiO<sub>2</sub>, Si<sub>3</sub>N<sub>4</sub>,
+        Al, krzemu polikrystalicznego itp. Proces fotolitografii pokazany
+        jest tu na przykładzie ważniejszych faz procesu wytwarzania
+        <span class="flt-def"
+          >okien
+          <div class="flt-def-window">
+            Wytrawiona przestrzeń w warstwie SiO<sub>2</sub>,
+            Si<sub>3</sub>N<sub>4</sub>, Al, krzemu polikrystalicznego itp.
+            odsłaniająca wybrane obszary płytki podłożowej.
+          </div></span
+        >
+        w warstwie SiO<sub>2</sub>.
+      </div>
     </div>
     `,
     `
@@ -744,10 +940,8 @@
             >
             .
           </div>`,
-    //2
-    `<div class="flt-title-slide flt-section">
-            <h2>Technologia planarna</h2>
-          </div>`,
+  ];
+  const slideElems2 = [
     `<h2>Technologia planarna</h2>
           <img class="flt-image" src="images/flt-9.png" alt="" />
           <div class="flt-text">
@@ -953,33 +1147,7 @@
             niezamaskowanych warstwą SiO<sub>2</sub>. W ten sposób otrzymuje się
             warstwe <i>typu p (lub n)</i> o precyzyjnie określonych kształtach.
           </div>`,
-    `<h3>Etap V - kilkakrotne powtórzenie wszystkich etapów</h3>
-          <img class="flt-image" src="images/flt-18.png" alt="" />
-          <div class="flt-text">
-            Kilkakrotne powtórzenie tej sekwencji procesów, przy różnych
-            kształtach warstw odwzorowywanych w procesie
-            <strong>fotolitografii</strong>, umożliwia otrzymanie struktur
-            wielowarstwowych, spełniających funkcje różnych elementów, o
-            wymaganych kształtach i określonej lokalizacji w
-            <i>płytce podłożowej</i>. Powyżej przedstawiono schemat gotowej
-            struktury
-            <span class="flt-def"
-              >diody Schottky'ego
-              <div class="flt-def-window">
-                Charakteryzuje się znikomo małym czasem przełączania (mniej niż
-                <strong>1 ns</strong>) i małym spadkiem napięcia przy pracy w
-                kierunku przewodzenia (ok. 0,4V). Baterię Schottky'ego uzyskuje
-                się na styku aluminium z niezbyt silnie domieszkowanym krzemem
-                typu n (na styku aluminium z silnie domieszkowanym krzemem typu
-                n<sub>+</sub> powstaje kontakt omowy).
-              </div></span
-            >.
-          </div>`,
-    //3
-    `<div class="flt-title-slide flt-section">
-            <h2>Domieszkowanie lokalne</h2>
-          </div>`,
-    `<h3>Domieszkowanie lokalne</h3>
+    `<h3>Etap IV - domieszkowanie lokalne</h3>
           <div class="flt-text">
             Ideę domieszkowania lokalnego, zwanego również selektywnym ilustruje
             poniższy rysunek na przykładzie dyfuzji lokalnej boru do podłoża
@@ -1016,103 +1184,30 @@
             <strong>warstwa Si<sub>3</sub>N<sub>4</sub></strong
             >.
           </div>`,
-    //4
-    `<div class="flt-title-slide flt-section">
-            <h2>Nowinki techniczne</h2>
-          </div>`,
-    `<h2>Nowinki techniczne</h2>
-          <img class="flt-image" src="images/flt-10.png" alt="" />
+    `<h3>Etap V - kilkakrotne powtórzenie wszystkich etapów</h3>
+  <img class="flt-image" src="images/flt-18.png" style="max-height: 30vh; width: auto" />
           <div class="flt-text">
-            Będąca siłą napędową mikroelektroniki potrzeba upakowania wewnątrz
-            układu scalonego coraz większej liczby
+            Kilkakrotne powtórzenie tej sekwencji procesów, przy różnych
+            kształtach warstw odwzorowywanych w procesie
+            <strong>fotolitografii</strong>, umożliwia otrzymanie struktur
+            wielowarstwowych, spełniających funkcje różnych elementów, o
+            wymaganych kształtach i określonej lokalizacji w
+            <i>płytce podłożowej</i>. Powyżej przedstawiono schemat gotowej
+            struktury
             <span class="flt-def"
-              >tranzystorów
+              >diody Schottky'ego
               <div class="flt-def-window">
-                Przyrząd półprzewodnikowy trójelektrodowy, umożliwiający
-                wzmacnianie mocy sygnałów elektrycznych. Stanowi element czynny
-                układów elektronicznych. Pełni funkcję wzmacniacza,
-                przełącznika, detektora itp. Tranzystory dzieli się na:
-                bipolarne i unipolarne (polowe).
+                Charakteryzuje się znikomo małym czasem przełączania (mniej niż
+                <strong>1 ns</strong>) i małym spadkiem napięcia przy pracy w
+                kierunku przewodzenia (ok. 0,4V). Baterię Schottky'ego uzyskuje
+                się na styku aluminium z niezbyt silnie domieszkowanym krzemem
+                typu n (na styku aluminium z silnie domieszkowanym krzemem typu
+                n<sub>+</sub> powstaje kontakt omowy).
               </div></span
-            >
-            zmusza producentów do sięgania po technologie o coraz mniejszym
-            wymiarze charakterystycznym. To z kolei wymusza stosowanie w
-            wykorzystywanym do produkcji układów procesie
-            <span class="flt-def"
-              >fotolitograficznym
-              <div class="flt-def-window">
-                Polega na wielokrotnym nakładaniu na powstającą strukturę
-                krzemową światłoczułych masek, które po naświetleniu i
-                potraktowaniu odpowiednim roztworem odsłaniają jedynie wybrane
-                powierzchnie krzemu dla kolejnych procesów. Naświetlanie
-                przypomina w pewnym stopniu wyświetlanie slajdów na ekranie,
-                rolę slajdu pełni maska wzorcowa - podstawowa różnica polega na
-                tym, że naświetlany obraz jest pomniejszoną, a nie powiększoną
-                wersją oryginału.
-              </div></span
-            >
-            światła o coraz mniejszej długości fali. Obecnie stosowane procesy
-            nie używają już światła widzialnego, a
-            <span class="flt-def"
-              >promieniowania nadfioletowego
-              <div class="flt-def-window">
-                Jest to promieniowanie elektromagnetyczne o fali długości 10-400
-                nm, nie wywołujące wrażeń wzrokowych u człowieka; obszar
-                promieniowania nadfioletowego dzieli się umownie na 4 części:
-                zakres A o długości fali 315-400 nm, zakres B 280-315 nm, zakres
-                C 200-280 nm i nadfiolet próżniowy 10-200 nm, lub też dzieli się
-                na nadfiolet bliski (200-400 nm) i nadfiolet daleki, próżniowy
-                (10-200 nm), który swoją nazwę zawdzięcza temu, że można go
-                badać tylko w próżni, gdyż fale o odpowiadających mu długościach
-                są bardzo silnie pochłaniane przez powietrze. Do detekcji
-                promieniowania nadfioletowego wykorzystuje się: fotoogniwa,
-                fotopowielacze, przetworniki promieniowania.
-                <br />
-                <br />
-                Najsilniejszym naturalnym źródłem promieniowania nadfioletowego
-                jest Słońce, zaś najbardziej rozpowszechnionymi sztucznymi
-                źródłami promieniowania nadfioletowego są lampy wyładowcze
-                (głównie rtęciowe). Dzięki swoim właściwościom promieniowanie
-                nadfioletowe jest wykorzystywane m.in. w technice oświetleniowej
-                (świetlówki), analizie luminescencyjnej, badaniach
-                nieniszczących, do sterylizacji pomieszczeń, w biologii w
-                badaniach mikroskopowych tkanek i komórek, w kryminalistyce,
-                muzealnictwie, w przemyśle do przyspieszania procesów
-                polimeryzacji tworzyw sztucznych. Promieniowanie nadfioletowe
-                odkryli 1801 J. Ritter i W.H. Wollaston.
-              </div></span
-            >. Przy długości fali ok. <strong>248 nanometrów</strong> możliwe
-            jest uzyskanie wymiaru charakterystycznego rzędu 150-120 nanometrów.
-          </div>`,
-    `<h2>Metoda konkurencyjna dla fotolitografii</h2>
-          <img class="flt-image" src="images/flt-11.png" width="100px" alt="" />
-          <div class="flt-text">
-            W dzisiejszych czasach do produkcji <strong>procesorów</strong> wykorzystuje się
-            proces <strong>rentgenolitografii</strong>. Odmiana ta polega na
-            użyciu fal o długości od 0,4 do 1 nm, czyli promieni rentgenowskich.
-            Jako podłoża masek do rentgenolitografii stosowane są cienkie
-            membrany krzemowe oraz takie materiały jak tytan, SiC, mylar,
-            poliamidy czy inne, natomiast jako materiał pochłaniający
-            promieniowanie - złoto. Podstawową zaletą zastosowania promieni
-            rentgenowskich o długości fali około 800 razy krótszej od fal
-            stosowanych w klasycznej fotoligrafii jest uzyskanie większej
-            rozdzielczości.
-          </div>`,
-    `<div class="flt-title-slide flt-section">
-            <h2>Dziękuję za uwagę</h2>
+            >.
           </div>`,
   ];
 
-  //Nazwy sekcji
-  const sections = [
-    "Fotolitografia",
-    "Technologia planarna",
-    "Domieszkowanie lokalne",
-    "Nowinki techniczne",
-  ];
-
-  //Numery slajdów od których zaczyna się dana sekcja
-  const sectionNums = [1, 9, 15, 17];
   ////SLIDER
   //Buttons
   const revertButton = document.getElementById("flt-revert");
@@ -1136,6 +1231,13 @@
   //Functions
   function fltSettings() {
     document.getElementById("flt-title").textContent = title;
+    fltCheckArrows();
+    fltCheckSections();
+    fltLoadElems();
+    fltLoadSliderListener();
+    fltLoadListeners();
+    fltChooseAnim();
+    slide.innerHTML = slides[0];
   }
   function fltChangeSlide(num) {
     slide.innerHTML = slides[num];
@@ -1144,7 +1246,14 @@
     console.log("FLTSlide: " + slideIndicator);
     fltCheckArrows();
     fltCheckSections();
-    fltLoadSlide();
+    fltLoadElems();
+    fltLoadSliderListener();
+    fltLoadListeners();
+    fltChooseAnim();
+    if (slideContent) {
+      var table = checkSlideParts();
+      slideContent.innerHTML = table[0];
+    }
   }
   function fltCheckArrows() {
     if (currentSlide > 0) {
@@ -1164,9 +1273,8 @@
     for (var i = 0; i < sectionNums.length; i++) {
       var a = i + 1;
       if (
-        (currentSlide >= sectionNums[i] - 1 &&
-          currentSlide < sectionNums[a] - 1) ||
-        currentSlide >= sectionNums[sectionNums.length - 1] - 1
+        (currentSlide >= sectionNums[i] && currentSlide < sectionNums[a]) ||
+        currentSlide >= sectionNums[sectionNums.length - 1]
       ) {
         document
           .getElementById("flt-menu-" + currentSection)
@@ -1227,73 +1335,30 @@
   fullScreen.addEventListener("click", fltToggleFullScreen);
 
   ////CONTENT
-  //Buttons
-  var defButtons = document.querySelectorAll(".flt-def");
-  var play1 = document.getElementById("flt-play-1");
-  var play2 = document.getElementById("flt-play-2");
-  var play3 = document.getElementById("flt-play-3");
   //Elements
-  var defElems = document.querySelectorAll("flt-def-window");
-  //Listeners
-  defButtons.forEach(function (elem) {
-    elem.addEventListener("click", function () {
-      elem.querySelector(".flt-def-window").classList.toggle("flt-block");
-    });
-  });
-  play1?.addEventListener("click", function () {
-    fltSlideAnim1();
-  });
-  play2?.addEventListener("click", function () {
-    fltSlideAnim2();
-  });
-  play3?.addEventListener("click", function () {
-    fltSlideAnim3();
-  });
+  var slideContent;
+  //Indicators
+  var currentPart = 0;
+  //Buttons
+  var defButtons, play1, play2, play3, animSlider;
   //Functions
-  function fltSlideAnim1() {
-    element = document.querySelector(".flt-anim-up");
-    element.style.bottom = "50px";
-    setTimeout(function () {
-      element.style.bottom = "0px";
-      document.querySelector(".flt-desc").classList.add("flt-block");
-    }, 500);
-  }
-  function fltSlideAnim2() {
-    element = document.querySelector(".flt-anim-up");
-    element.style.bottom = "50px";
-    setTimeout(function () {
-      element.style.bottom = "-20px";
-      document.querySelector(".flt-desc").classList.add("flt-block");
-      console.log("xd");
-      setTimeout(function () {
-        element.style.bottom = "50px";
-        console.log("xd");
-        setTimeout(function () {
-          element.style.bottom = "-20px";
-          console.log("xd");
-        }, 500);
-      }, 500);
-    }, 500);
-  }
-  function fltSlideAnim3() {
-    var img1 = document.getElementById("flt-img2-1");
-    var img2 = document.getElementById("flt-img2-2");
-    img2.classList.remove("flt-img-2-visible");
-    img1.classList.add("flt-img-2-visible");
-    setTimeout(function () {
-      img1.classList.remove("flt-img-2-visible");
-      img2.classList.add("flt-img-2-visible");
-    }, 2000);
-  }
-  function fltLoadSlide() {
-    defElems = document.querySelectorAll("flt-def-window");
+  function fltLoadElems() {
+    slideContent = document.getElementById("flt-slide-content");
+    animSlider = document.getElementById("flt-anim-slider");
     defButtons = document.querySelectorAll(".flt-def");
     play1 = document.getElementById("flt-play-1");
     play2 = document.getElementById("flt-play-2");
     play3 = document.getElementById("flt-play-3");
+  }
+  function fltLoadSliderListener() {
+    animSlider?.addEventListener("input", function () {
+      fltAnimate(this.value);
+    });
+  }
+  function fltLoadListeners() {
     defButtons.forEach(function (elem) {
       elem.addEventListener("click", function () {
-        elem.querySelector(".flt-def-window").classList.toggle("flt-block");
+        elem.querySelector(".flt-def-window").classList.toggle("flt-abs-block");
       });
     });
     play1?.addEventListener("click", function () {
@@ -1305,5 +1370,74 @@
     play3?.addEventListener("click", function () {
       fltSlideAnim3();
     });
+    console.log("Listeners loaded.");
+  }
+  //Animations
+  function fltChooseAnim() {
+    if (play1) {
+      fltSlideAnim1();
+    }
+    if (play2) {
+      fltSlideAnim2();
+    }
+    if (play3) {
+      fltSlideAnim3();
+    }
+  }
+  function checkSlideParts() {
+    var table;
+    if (currentSection == 1) {
+      table = slideElems1;
+    } else {
+      table = slideElems2;
+    }
+    return table;
+  }
+  function fltAnimate(scrollValue) {
+    var table = checkSlideParts();
+    var elemIndex = (scrollValue - (scrollValue % 100)) / 100;
+    if (currentPart != elemIndex) {
+      slideContent.innerHTML = table[elemIndex];
+      currentPart = elemIndex;
+      console.log("Updated part.");
+      fltLoadElems();
+      fltLoadListeners();
+      fltChooseAnim();
+      console.log("Loaded part listeners.");
+    }
+    if (play3) {
+      fltSlideAnim3(scrollValue);
+    }
+  }
+  function fltSlideAnim1() {
+    element = document.querySelector(".flt-anim-up");
+    element.style.bottom = "50px";
+    setTimeout(function () {
+      element.style.bottom = "0px";
+      document.querySelector(".flt-desc")?.classList.add("flt-block");
+    }, 500);
+  }
+  function fltSlideAnim2() {
+    element = document.querySelector(".flt-anim-up");
+    element.style.bottom = "50px";
+    setTimeout(function () {
+      element.style.bottom = "-20px";
+      document.querySelector(".flt-desc")?.classList.add("flt-block");
+      setTimeout(function () {
+        element.style.bottom = "50px";
+        setTimeout(function () {
+          element.style.bottom = "-20px";
+        }, 500);
+      }, 500);
+    }, 500);
+  }
+  function fltSlideAnim3(scrollPosition) {
+    var img1 = document.getElementById("flt-img2-1");
+    var img2 = document.getElementById("flt-img2-2");
+    var opacity = (scrollPosition % 100) / 100;
+    var misOpacity = 1 - opacity;
+    img1.style.opacity = misOpacity;
+    img2.style.opacity = opacity;
+    console.log(img1.attributes);
   }
 </script>

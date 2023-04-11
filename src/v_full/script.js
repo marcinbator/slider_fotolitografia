@@ -219,16 +219,6 @@ function fltSlideAnim2() {
     }, 500);
   }, 500);
 }
-/*function fltSlideAnim3() {
-  var img1 = document.getElementById("flt-img2-1");
-  var img2 = document.getElementById("flt-img2-2");
-  img2.classList.remove("flt-img-2-visible");
-  img1.classList.add("flt-img-2-visible");
-  setTimeout(function () {
-    img1.classList.remove("flt-img-2-visible");
-    img2.classList.add("flt-img-2-visible");
-  }, 2000);
-}*/
 function fltSlideAnim3(scrollPosition) {
   var img1 = document.getElementById("flt-img2-1");
   var img2 = document.getElementById("flt-img2-2");

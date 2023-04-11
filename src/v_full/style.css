@@ -356,7 +356,7 @@ ol .flt-button {
   opacity: 1;
 }
 #flt-play-3 {
-  width: 100%;
+  display: none;
 }
 #flt-play-3 .flt-tip {
   left: 50%;
