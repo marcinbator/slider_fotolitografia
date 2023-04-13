@@ -37,8 +37,8 @@ function fltChangeSlide(num) {
   fltCheckArrows();
   fltCheckSections();
   fltLoadElems();
-  fltLoadSliderListener();
   fltLoadListeners();
+  fltLoadSliderListener();
   fltChooseAnim();
   if (slideContent) {
     var table = checkSlideParts();
@@ -128,12 +128,13 @@ var slideContent;
 //Indicators
 var currentPart = 0;
 //Buttons
-var defButtons, play1, play2, play3, animSlider;
+var defButtons, play1, play2, play3, animSlider, etapButton;
 //Functions
 function fltLoadElems() {
   slideContent = document.getElementById("flt-slide-content");
   animSlider = document.getElementById("flt-anim-slider");
   defButtons = document.querySelectorAll(".flt-def");
+  etapButton = document.querySelector(".flt-etap");
   play1 = document.getElementById("flt-play-1");
   play2 = document.getElementById("flt-play-2");
   play3 = document.getElementById("flt-play-3");
@@ -149,6 +150,10 @@ function fltLoadListeners() {
       elem.querySelector(".flt-def-window").classList.toggle("flt-abs-block");
     });
   });
+  etapButton?.addEventListener("click", function () {
+    document.querySelector(".flt-text").classList.toggle("flt-visible");
+  });
+  console.log(etapButton);
   play1?.addEventListener("click", function () {
     fltSlideAnim1();
   });
@@ -164,9 +169,6 @@ function fltLoadListeners() {
 function fltChooseAnim() {
   if (play1) {
     fltSlideAnim1();
-  }
-  if (play2) {
-    fltSlideAnim2();
   }
   if (play3) {
     fltSlideAnim3();
@@ -193,18 +195,17 @@ function fltAnimate(scrollValue) {
     fltChooseAnim();
     console.log("Loaded part listeners.");
   }
+  if (play1) {
+    fltSlideAnim1(scrollValue);
+  }
+  if (play2) {
+    fltSlideAnim2(scrollValue);
+  }
   if (play3) {
     fltSlideAnim3(scrollValue);
   }
 }
-function fltSlideAnim1() {
-  element = document.querySelector(".flt-anim-up");
-  element.style.bottom = "50px";
-  setTimeout(function () {
-    element.style.bottom = "0px";
-    document.querySelector(".flt-desc")?.classList.add("flt-block");
-  }, 500);
-}
+/*
 function fltSlideAnim2() {
   element = document.querySelector(".flt-anim-up");
   element.style.bottom = "50px";
@@ -218,6 +219,16 @@ function fltSlideAnim2() {
       }, 500);
     }, 500);
   }, 500);
+}*/
+function fltSlideAnim1(scrollPosition) {
+  element = document.querySelector(".flt-anim-up");
+  var position = (80 - (scrollPosition % 100)) / 2;
+  element.style.bottom = position + "px";
+  if (position < 5) {
+    document.querySelector(".flt-desc")?.classList.add("flt-block");
+  } else {
+    document.querySelector(".flt-desc")?.classList.remove("flt-block");
+  }
 }
 function fltSlideAnim3(scrollPosition) {
   var img1 = document.getElementById("flt-img2-1");

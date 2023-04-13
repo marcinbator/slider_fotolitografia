@@ -55,7 +55,7 @@ const slides = [
           </div>`,
   `<h2>Nowinki techniczne</h2>
           <img class="flt-image" src="images/flt-10.png" alt="" />
-          <div class="flt-text">
+          <div style="font-size: x-large; margin: 10px">
             Będąca siłą napędową mikroelektroniki potrzeba upakowania wewnątrz
             układu scalonego coraz większej liczby
             <span class="flt-def"
@@ -119,7 +119,7 @@ const slides = [
           </div>`,
   `<h2>Metoda konkurencyjna dla fotolitografii</h2>
           <img class="flt-image" src="images/flt-11.png" width="100px" alt="" />
-          <div class="flt-text">
+          <div style="font-size: x-large; margin: 10px">
             W dzisiejszych czasach do produkcji <strong>procesorów</strong> wykorzystuje się
             proces <strong>rentgenolitografii</strong>. Odmiana ta polega na
             użyciu fal o długości od 0,4 do 1 nm, czyli promieni rentgenowskich.
@@ -133,7 +133,7 @@ const slides = [
           </div>`,
   `<h2>Najnowsze mikroprocesory</h2>
           <img class="flt-image" src="images/flt-19.png" width="100px" alt="" />
-          <div class="flt-text">
+          <div style="font-size: x-large; margin: 10px">
             Mistrzem świata na nanometrze kwadratowym jest holenderska firma ASML. ASML 
             produkuje maszyny fotolitograficzne o największej gęstości tranzystorów i połączeń na "waflu krzemowym".
              Dziesiątki miliardów tranzystorów, <strong>200 razy mniejszych niż czerwona krwinka.</strong> Dzięki ASML najnowsze procesory wykonywane 
@@ -146,10 +146,10 @@ const slides = [
 ];
 const slideElems1 = [
   `<h2>Podstawowe fazy fotolitografii</h2>
-    <h3>Etap I</h3>
+    <h3 class="flt-etap">Etap I</h3>
     <div class="flt-animation1">
       <img class="flt-image" src="images/flt-1.png" alt="" />
-      <div class="flt-text">
+      <div style="font-size: x-large; margin: 10px">
         <span class="flt-def"
           >Fotolitografia
           <div class="flt-def-window">
@@ -180,12 +180,12 @@ const slideElems1 = [
       </div>
     </div>
     `,
-  `
-    <h3>Etap II - Nakładanie emulsji światłoczułej na podłoże Si</h3>
+  `<h2>Podstawowe fazy fotolitografii</h2>
+    <h3 class="flt-etap">Etap II - Nakładanie emulsji światłoczułej na podłoże Si</h3>
     <div class="flt-animation1">
       <div
         class="flt-anim-up"
-        style="background-color: black; width: 50%; height: 10px"
+        style="background-color: black; width: 33%; height: 10px; right: 6%"
       >
         <span class="flt-desc"><i class="fa-solid fa-arrow-down"></i> Warstwa światłoczuła (fotorezyst)</span>
       </div>
@@ -203,13 +203,11 @@ const slideElems1 = [
       emulsji, dlatego płytka jest mocowana przyssawką próżniową do
       stolika wykonującego szybki ruch obrotowy (ok. 20 000 obr/min).
     </div>`,
-  `<h3>Etap III - Naświetlanie przez fotomaskę</h3>
+  `<h2>Podstawowe fazy fotolitografii</h2>
+    <h3 class="flt-etap">Etap III - Naświetlanie przez fotomaskę</h3>
           <div style="min-height: 40%;" class="flt-animation1">
             <div class="flt-anim-up">
               <img class="flt-image" src="images/flt-4.png" alt="" />
-              <span style="bottom: 100%" class="flt-desc"
-                >Promieniowanie nadfioletowe</span
-              >
             </div>
             <span
               style="display: block; bottom: 0px; left: 15%;"
@@ -218,7 +216,7 @@ const slideElems1 = [
             >
             <img class="flt-image" src="images/flt-3.png" alt="" />
             <i
-              id="flt-play-2"
+              id="flt-play-1"
               class="flt-play flt-button fa-regular fa-circle-play"
               ><span class="flt-tip">Odtwórz</span></i
             >
@@ -284,7 +282,8 @@ const slideElems1 = [
             powodującą uodpornienie warstwy na działanie roztworu
             wytrawiającego.
           </div>`,
-  `<h3>Etap IV - odsłonięcie warstwy SiO<sub>2</sub></h3>
+  `<h2>Podstawowe fazy fotolitografii</h2>
+    <h3 class="flt-etap">Etap IV - odsłonięcie warstwy SiO<sub>2</sub></h3>
           <div class="flt-animation-2">
             <div class="flt-2images">
               <img
@@ -324,7 +323,9 @@ const slideElems1 = [
             pozytywowych), czyli osłania tylko tę część powierzchni, która była
             naświetlona.
           </div>`,
-  `<h3>Etap V - wytrawienie okna w SiO<sub>2</sub></h3>
+  `
+  <h2>Podstawowe fazy fotolitografii</h2>
+    <h3 class="flt-etap">Etap V - wytrawienie okna w SiO<sub>2</sub></h3>
           <div class="flt-animation-2">
             <div class="flt-2images">
               <img
@@ -371,7 +372,8 @@ const slideElems1 = [
             w odsłoniętej części warstwy <strong>SiO<sub>2</sub></strong
             >.
           </div>`,
-  `<h3>Etap VI - usunięcie warstwy światłoczułej</h3>
+  `<h2>Podstawowe fazy fotolitografii</h2>
+    <h3 class="flt-etap">Etap VI - usunięcie warstwy światłoczułej</h3>
           <div class="flt-animation-2">
             <div class="flt-2images">
               <img
@@ -442,7 +444,7 @@ const slideElems1 = [
 const slideElems2 = [
   `<h2>Technologia planarna</h2>
           <img class="flt-image" src="images/flt-9.png" alt="" />
-          <div class="flt-text">
+          <div style="font-size: x-large; margin: 10px">
             Pojęcie <strong>technologia planarna</strong>
             odnosi się do wytwarzania
             <span class="flt-def"
@@ -479,7 +481,7 @@ const slideElems2 = [
             powierzchnię, przy czym powierzchnia ta stanowi płaszczyznę, stąd
             pochodzi przymiotnik <i>planarna</i> - inaczej płaszczyznowa.
           </div>`,
-  `<h3>Etap I - utlenianie</h3>
+  `<h3 class="flt-etap">Etap I - utlenianie</h3>
           <div class="flt-animation-2">
             <div class="flt-2images">
               <img
@@ -538,7 +540,7 @@ const slideElems2 = [
               </div></span
             >.
           </div>`,
-  `<h3>Etap II - Fotolitografia</h3>
+  `<h3 class="flt-etap">Etap II - Fotolitografia</h3>
           <div class="flt-animation-2">
             <div class="flt-2images">
               <img
@@ -608,7 +610,7 @@ const slideElems2 = [
               </div></span
             >.
           </div>`,
-  `<h3>Etap III - dyfuzja</h3>
+  `<h3 class="flt-etap">Etap III - dyfuzja</h3>
           <div class="flt-animation-2">
             <div class="flt-2images">
               <img
@@ -645,17 +647,18 @@ const slideElems2 = [
             niezamaskowanych warstwą SiO<sub>2</sub>. W ten sposób otrzymuje się
             warstwe <i>typu p (lub n)</i> o precyzyjnie określonych kształtach.
           </div>`,
-  `<h3>Etap IV - domieszkowanie lokalne</h3>
+  `<h3 class="flt-etap">Etap IV - domieszkowanie lokalne</h3>
+  <img class="flt-image" src="images/flt-8.png" alt="" />
           <div class="flt-text">
             Ideę domieszkowania lokalnego, zwanego również selektywnym ilustruje
-            poniższy rysunek na przykładzie dyfuzji lokalnej boru do podłoża
+            powyższy rysunek na przykładzie dyfuzji lokalnej boru do podłoża
             krzemowego typu n. Płytka krzemowa jest pokryta warstwą
             SiO<sub>2</sub>, w której wykonano otwór. Warstwa dwutlenku krzemu
             stanowi skuteczną barierę uniemożliwiającą przenikanie domieszek do
             pokrytej tą warstwą powierzchni półprzewodnika, gdyż współczynnik
             dyfuzji domieszek SiO<sub>2</sub>
             jest ok. 20-krotnie mniejszy niż Si.
-            <img class="flt-image" src="images/flt-8.png" alt="" />
+            
             Warstwa SiO<sub>2</sub> spełnia więc funkcję <span class="flt-def"
               >fotomaski
               <div class="flt-def-window">
@@ -682,7 +685,7 @@ const slideElems2 = [
             <strong>warstwa Si<sub>3</sub>N<sub>4</sub></strong
             >.
           </div>`,
-  `<h3>Etap V - kilkakrotne powtórzenie wszystkich etapów</h3>
+  `<h3 class="flt-etap">Etap V - kilkakrotne powtórzenie wszystkich etapów</h3>
   <img class="flt-image" src="images/flt-18.png" style="max-height: 30vh; width: auto" />
           <div class="flt-text">
             Kilkakrotne powtórzenie tej sekwencji procesów, przy różnych

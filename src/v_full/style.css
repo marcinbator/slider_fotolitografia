@@ -70,13 +70,19 @@
   margin: 10px;
   padding: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: column;
   overflow-y: auto;
   position: relative;
 }
 .flt-slide h3 {
   justify-self: flex-start;
+}
+.flt-slide-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
 }
 .flt-slide-container:fullscreen .flt-slide {
   height: 80vh;
@@ -190,7 +196,6 @@ ol.flt-table {
 /*Content styles*/
 .flt-def-window {
   display: none;
-  position: relative;
   left: 0;
   top: 0;
   border: 1px solid lightgrey;
@@ -247,13 +252,29 @@ ol.flt-table {
   margin-right: auto;
 }
 .flt-text {
-  display: block;
+  display: none;
   text-align: left;
   font-size: x-large;
   margin: 30px 50px;
+  visibility: hidden;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid black;
+  height: 40%;
+  overflow-y: auto;
+}
+h3:hover {
+  color: rgb(47, 0, 121);
+  cursor: pointer;
+}
+.flt-visible {
+  visibility: visible !important;
+  display: block !important;
 }
 .flt-abs-block {
-  position: absolute;
   display: block;
   background-color: white;
 }
@@ -268,20 +289,19 @@ ol.flt-table {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 20%;
-  margin-top: 80px;
+  height: 40%;
+  margin-top: 10%;
 }
 .flt-animation {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 20%;
-  margin-top: 80px;
+  height: 40%;
   max-width: 50%;
 }
 .flt-animation-2 {
-  min-height: 40%;
+  height: 40%;
   margin-top: 20%;
   display: flex;
   justify-content: center;
@@ -299,11 +319,11 @@ ol .flt-button {
 }
 .flt-play {
   margin-top: 20px;
+  display: none !important;
 }
 .flt-anim-up {
   position: relative;
-  bottom: 50px;
-  transition: bottom 1s ease-in-out;
+  bottom: 0;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -325,6 +345,8 @@ ol .flt-button {
   color: white;
   text-shadow: 0 0 3px black;
   font-size: x-large;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .flt-section {
   height: 100%;
