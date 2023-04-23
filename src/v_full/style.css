@@ -249,7 +249,13 @@ ol.flt-table {
 .flt-image {
   width: 50%;
   margin-left: auto;
+  position: relative;
   margin-right: auto;
+}
+.flt-img-trans {
+  bottom: -5vh;
+  left: -5vw;
+  transform: scale(1.1);
 }
 .flt-text {
   display: none;
@@ -258,13 +264,18 @@ ol.flt-table {
   margin: 30px 50px;
   visibility: hidden;
   position: absolute;
-  top: 40%;
-  left: 0;
+  top: 0;
+  right: 0;
   background-color: white;
   padding: 20px;
   border: 1px solid black;
-  height: 40%;
+  max-height: 40%;
+  max-width: 50%;
   overflow-y: auto;
+}
+.flt-text-close:hover {
+  color: red;
+  cursor: pointer;
 }
 h3:hover {
   color: rgb(47, 0, 121);

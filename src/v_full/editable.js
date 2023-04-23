@@ -150,32 +150,11 @@ const slideElems1 = [
     <div class="flt-animation1">
       <img class="flt-image" src="images/flt-1.png" alt="" />
       <div style="font-size: x-large; margin: 10px">
-        <span class="flt-def"
-          >Fotolitografia
-          <div class="flt-def-window">
-            Polega na wielokrotnym nakładaniu na powstającą strukturę
-            krzemową światłoczułych masek, które po naświetleniu i
-            potraktowaniu odpowiednim roztworem odsłaniają jedynie wybrane
-            powierzchnie krzemu dla kolejnych procesów. Naświetlanie
-            przypomina w pewnym stopniu wyświetlanie slajdów na ekranie,
-            rolę slajdu pełni maska wzorcowa - podstawowa różnica polega na
-            tym, że naświetlany obraz jest pomniejszoną, a nie powiększoną
-            wersją oryginału.
-          </div></span
-        >
-        polega na zastosowaniu emulsji światłoczułej (tzw.
+      Fotolitografia polega na zastosowaniu emulsji światłoczułej (tzw.
         <strong>fotorezystu</strong>) do maskowania i lokalnego wytrawiania
         odsłoniętych warstw SiO<sub>2</sub>, Si<sub>3</sub>N<sub>4</sub>,
         Al, krzemu polikrystalicznego itp. Proces fotolitografii pokazany
-        jest tu na przykładzie ważniejszych faz procesu wytwarzania
-        <span class="flt-def"
-          >okien
-          <div class="flt-def-window">
-            Wytrawiona przestrzeń w warstwie SiO<sub>2</sub>,
-            Si<sub>3</sub>N<sub>4</sub>, Al, krzemu polikrystalicznego itp.
-            odsłaniająca wybrane obszary płytki podłożowej.
-          </div></span
-        >
+        jest tu na przykładzie ważniejszych faz procesu wytwarzania okien
         w warstwie SiO<sub>2</sub>.
       </div>
     </div>
@@ -197,6 +176,7 @@ const slideElems1 = [
       >
     </div>
     <div class="flt-text">
+    <i class="flt-text-close fa-solid fa-xmark"></i>
       Proces nakładania cienkiej warstwy
       <strong>emulsji światłoczułej</strong> na powierzchnię utlenionej
       płytki podłożowej. Bardzo ważne jest uzyskanie równomiernej warstwy
@@ -222,6 +202,7 @@ const slideElems1 = [
             >
           </div>
           <div class="flt-text">
+          <i class="flt-text-close fa-solid fa-xmark"></i>
             Po wysuszeniu emulsji powierzchnia płytki jest
             <strong>naświetlana</strong> przez specjalną maskę kontaktową (tzw.
             <span class="flt-def"
@@ -306,6 +287,7 @@ const slideElems1 = [
             >
           </div>
           <div class="flt-text">
+          <i class="flt-text-close fa-solid fa-xmark"></i>
             Płytka jest naświetlana przez
             <span class="flt-def"
               >fotomaskę
@@ -348,6 +330,7 @@ const slideElems1 = [
             >
           </div>
           <div class="flt-text">
+          <i class="flt-text-close fa-solid fa-xmark"></i>
             W tej fazie płytka jest poddawana działaniu
             <span class="flt-def"
               >kwasu fluorowodorowego
@@ -399,6 +382,7 @@ const slideElems1 = [
             >
           </div>
           <div class="flt-text">
+          <i class="flt-text-close fa-solid fa-xmark"></i>
             Ostatnim etapem
             <span class="flt-def"
               >fotolitografii
@@ -446,29 +430,8 @@ const slideElems2 = [
           <img class="flt-image" src="images/flt-9.png" alt="" />
           <div style="font-size: x-large; margin: 10px">
             Pojęcie <strong>technologia planarna</strong>
-            odnosi się do wytwarzania
-            <span class="flt-def"
-              >tranzystorów
-              <div class="flt-def-window">
-                Przyrząd półprzewodnikowy trójelektrodowy, umożliwiający
-                wzmacnianie mocy sygnałów elektrycznych. Stanowi element czynny
-                układów elektronicznych. Pełni funkcję wzmacniacza,
-                przełącznika, detektora itp. Tranzystory dzieli się na:
-                bipolarne i unipolarne (polowe).
-              </div></span
-            >
-            i
-            <span class="flt-def"
-              >układów scalonych
-              <div class="flt-def-window">
-                Miniaturowy układ elektroniczny, w którym część lub wszystkie
-                elementy wraz z ich połączeniami są wytworzone w jednym cyklu
-                technologicznym wewnątrz lub na powierzchni wspólnego podłoża.
-                Miarą złożoności układu scalonego jest tzw. stopień scalenia
-                (skala integracji), określający liczbę elementów w pojedynczej
-                strukturze układu.
-              </div></span
-            >
+            odnosi się do wytwarzania tranzystorów
+            i układów scalonych
             w płytkach krzemowych i obejmuje swym znaczeniem zespół procesów
             technologicznych, w których są powtarzane sekwencje trzech operacji:
             <ul>
@@ -504,6 +467,7 @@ const slideElems2 = [
             >
           </div>
           <div class="flt-text">
+          <i class="flt-text-close fa-solid fa-xmark"></i>
             Najpierw płytka podłożowa (Si) jest
             <span class="flt-def"
               >utleniana
@@ -563,6 +527,7 @@ const slideElems2 = [
             >
           </div>
           <div class="flt-text">
+          <i class="flt-text-close fa-solid fa-xmark"></i>
             Obróbka litograficzna - zwykle litografia optyczna, czyli
             <span class="flt-def"
               >fotolitografia
@@ -633,6 +598,7 @@ const slideElems2 = [
             >
           </div>
           <div class="flt-text">
+          <i class="flt-text-close fa-solid fa-xmark"></i>
             Następnie płytka jest poddawana procesowi
             <span class="flt-def"
               >dyfuzji
@@ -648,8 +614,9 @@ const slideElems2 = [
             warstwe <i>typu p (lub n)</i> o precyzyjnie określonych kształtach.
           </div>`,
   `<h3 class="flt-etap">Etap IV - domieszkowanie lokalne</h3>
-  <img class="flt-image" src="images/flt-8.png" alt="" />
+  <img class="flt-image flt-img-trans"  src="images/flt-8.png" alt="" />
           <div class="flt-text">
+          <i class="flt-text-close fa-solid fa-xmark"></i>
             Ideę domieszkowania lokalnego, zwanego również selektywnym ilustruje
             powyższy rysunek na przykładzie dyfuzji lokalnej boru do podłoża
             krzemowego typu n. Płytka krzemowa jest pokryta warstwą
@@ -686,8 +653,9 @@ const slideElems2 = [
             >.
           </div>`,
   `<h3 class="flt-etap">Etap V - kilkakrotne powtórzenie wszystkich etapów</h3>
-  <img class="flt-image" src="images/flt-18.png" style="max-height: 30vh; width: auto" />
+  <img class="flt-image flt-img-trans" src="images/flt-18.png" style="max-height: 30vh; width: auto" />
           <div class="flt-text">
+          <i class="flt-text-close fa-solid fa-xmark"></i>
             Kilkakrotne powtórzenie tej sekwencji procesów, przy różnych
             kształtach warstw odwzorowywanych w procesie
             <strong>fotolitografii</strong>, umożliwia otrzymanie struktur

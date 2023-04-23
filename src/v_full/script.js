@@ -128,13 +128,14 @@ var slideContent;
 //Indicators
 var currentPart = 0;
 //Buttons
-var defButtons, play1, play2, play3, animSlider, etapButton;
+var defButtons, play1, play2, play3, animSlider, etapButton, textCloseButtons;
 //Functions
 function fltLoadElems() {
   slideContent = document.getElementById("flt-slide-content");
   animSlider = document.getElementById("flt-anim-slider");
   defButtons = document.querySelectorAll(".flt-def");
   etapButton = document.querySelector(".flt-etap");
+  textCloseButtons = document.querySelectorAll(".flt-text-close");
   play1 = document.getElementById("flt-play-1");
   play2 = document.getElementById("flt-play-2");
   play3 = document.getElementById("flt-play-3");
@@ -152,6 +153,11 @@ function fltLoadListeners() {
   });
   etapButton?.addEventListener("click", function () {
     document.querySelector(".flt-text").classList.toggle("flt-visible");
+  });
+  textCloseButtons.forEach(function (elem) {
+    elem.addEventListener("click", function () {
+      document.querySelector(".flt-text").classList.toggle("flt-visible");
+    });
   });
   console.log(etapButton);
   play1?.addEventListener("click", function () {
@@ -205,21 +211,6 @@ function fltAnimate(scrollValue) {
     fltSlideAnim3(scrollValue);
   }
 }
-/*
-function fltSlideAnim2() {
-  element = document.querySelector(".flt-anim-up");
-  element.style.bottom = "50px";
-  setTimeout(function () {
-    element.style.bottom = "-20px";
-    document.querySelector(".flt-desc")?.classList.add("flt-block");
-    setTimeout(function () {
-      element.style.bottom = "50px";
-      setTimeout(function () {
-        element.style.bottom = "-20px";
-      }, 500);
-    }, 500);
-  }, 500);
-}*/
 function fltSlideAnim1(scrollPosition) {
   element = document.querySelector(".flt-anim-up");
   var position = (80 - (scrollPosition % 100)) / 2;
